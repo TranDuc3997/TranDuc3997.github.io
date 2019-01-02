@@ -1,0 +1,8 @@
+365
+775
+bg e6f3fb
+boder f7a418
+bg p f9f1c2
+splat 0a6395
+container 320 735
+body panding 10px left right
