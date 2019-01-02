@@ -10,46 +10,46 @@ body {
   color: #595959;
   margin: 0 auto;
 }
-.block_right {
+.block__right {
   background-color: #242328;
   float: left;
   width: 25%;
   height: 65%;
   margin-left: 20px;
 }
-.block_left {
+.block__left {
   float: left;
   width: 50%;
   margin-left: 5px;
   margin-top: 20px
 }
-.block_picture {
+.block__picture {
   float: left;
   width: 40%;
   padding-right: 20px;
 }
-.block_picture img {
+.block__picture img {
   width: 200px;
   height: 100px;
 }
-.block_info {
+.block__info {
   float: left;
   width: 55%;
 }
-.title_main {
+.title__main {
   margin-bottom: 50px;
 }
-.title_info {
-  margin-block-start: 0em;
+.title__info {
+  margin-top: 0px;
   color: rgb(255,255,255);
 }
-.title_info--modify {
+.title__info--modify {
   margin-block-end: 0em;
 }
-.block_left_bottom {
+.block__left__bottom {
   margin-left: 10px;
 }
-.block_left_bottom_more {
+.block__left__bottom__more {
   background-image: url(../images/arr.png);
   background-repeat: no-repeat;
   background-position: left center;
@@ -57,33 +57,33 @@ body {
   text-decoration: none;
 }
 
-.block_left_bottom hr {
+.block__left__bottom hr {
   border-color: #121214;
   background-color: #121214;
   color: #121214;
   border-top: 1px dotted #595959;
   clear: left;
 }
-.block_left_bottom_content {
+.block__left__bottom__content {
 	margin-top: 85px;
 }
-.block_left_bottom_content a {
+.block__left__bottom__content a {
   color: #595959;
 }
-.block_left_bottom_content p {
-  margin-block-start: 0em;
+.block__left__bottom__content p {
+  margin-top: 0px;
 }
-.block_left_bottom_content_list {
+.block__left__bottom__content__list {
   list-style-image: url(../images/arrlist.gif);
-  padding-inline-start: 10px;
+  padding-left: 10px;
   float: left;
 
 }
-.block_left_bottom_content_list li {
+.block__left__bottom__content__list li {
   padding-bottom: 15px;
 }
 
-.block_right hr {
+.block__right hr {
   border-color: #242328;
   background-color: #242328;
   color: #242328;
@@ -91,21 +91,21 @@ body {
   border-top: 1px soild #353439;
 }
 
-.block_right img {
+.block__right img {
   display: block;
   margin: 25px auto 25px auto;
 }
 
-.block_right_content {
+.block__right__content {
   margin-left: 20px;
 }
-.block_right_content--modify {
-  margin-block-end: 0em;
+.block__right__content--modify {
+  margin-bottom: 0px;
 }
-.block_right_content span {
+.block__right__content span {
   color: #767884;
 }
-.block_right_content a {
+.block__right__content a {
   display: inline-block;
   margin-top: 30px;
 }
