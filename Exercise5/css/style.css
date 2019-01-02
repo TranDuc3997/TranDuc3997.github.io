@@ -1,0 +1,64 @@
+body {
+  width: 1057px;
+  margin: 0px auto;
+  font-size: 0px;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  width: 100%;
+  padding: 0px 0px 0px 0px;
+}
+
+.product li {
+  position: relative;
+}
+.button {
+  position: absolute;
+  left: 13%;
+  bottom: 5%;
+}
+.button--left {
+  left: 5%;
+}
+.button--bottom {
+  bottom: 11%;
+}
+
+.button img:hover {
+  content: url(../images/btn_off.jpg);
+}
+.footer {
+  position: relative;
+}
+.backtotop img {
+  position: absolute;
+  right: 6%;
+  top: 20%;
+}
+.footer__nav {
+  position: absolute;
+  bottom: 20px;
+  font-size: 10px;
+  font-family: "Meiryo", sans-serif;
+}
+.footer__nav a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.footer__nav a:before {
+  content: url(../images/arr.gif);
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.conpyright {
+  color: #ffffff;
+  font-size: 10px;
+  float: right;
+  position: absolute;
+  bottom: 9px;
+  right: 57px;
+}
