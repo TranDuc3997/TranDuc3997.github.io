@@ -15,7 +15,7 @@ body{
 h1{
   margin-bottom: 5px;
 }
-.user_avatar{
+.user__avatar{
   float: left; 
   margin-left: 14px; 
   margin-right: 5px; 
@@ -23,12 +23,12 @@ h1{
   height: 100px;
 }
 
-.title_profile{
+.title__profile{
   background-repeat: no-repeat; 
   background-position: bottom; 
   background-image: url("../images/shadowTitle.png");
  }
-.user_info{
+.user__info{
   height: 100px;
   overflow: scroll;
   padding-left: 10px;
@@ -41,14 +41,14 @@ h1{
   padding-left: 2px; 
 }
 
-.title_fact{
+.title__fact{
   margin-top: 15px;
 }
 
-.user_fact{
+.user__fact{
   margin-right: 50px;
 }
-.fact_content{
+.fact__content{
   list-style: none;
   margin-left: 40px;
   margin-bottom: 60px;
@@ -63,12 +63,12 @@ ul li:before{
   margin-right: 4px;
 }
 
-.comment_posted{
+.comment__posted{
   position: relative;
   height: 60px;
 }
 
-.comment_content:after{
+.comment__content:after{
   position:absolute;
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
@@ -80,7 +80,7 @@ ul li:before{
   content: "";
 }
   
-.comment_content{
+.comment__content{
   position:absolute;
   background-color:#ECECEC;
   width:475px; 
@@ -91,7 +91,7 @@ ul li:before{
   margin-left:2px;
 }
   
-.comment_detail{
+.comment__detail{
   position:absolute;
   top:44px;
   left:55px;
@@ -102,7 +102,7 @@ a{
   text-decoration: none;
 }
 
-.form_title{
+.form__title{
   font-size:17px;
   line-height:0.6;
   margin-bottom:3px;
@@ -110,12 +110,13 @@ a{
   text-align:center;
 }
 
-.form_label {
+.form__label {
   width: 106px;
   line-height:10px;
+  margin-right: 10px;
 }
 
-.form_textarea {
+.form__textarea {
   width: 382px;
   height: 84px;
   line-height:0.6;
