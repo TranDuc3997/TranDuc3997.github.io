@@ -1,0 +1,38 @@
+#table {
+  border-collapse: collapse;
+  }
+  
+#table, th, td {
+  border: 1px solid black;
+  width: 60px;
+  height: 35px;
+}
+#head {
+  color: red;
+  background-color: #bebebe;
+}
+#table td {
+  text-align: center;
+}
+.notday-js {
+  background-color: black;
+}
+.day-js:hover {
+  background-color: #00ace6;
+}
+#forward__Month-js {
+  background-color: #a9cce3;
+  background-image: url("../images/forward_month.png")  
+}
+#forward__Year-js {
+  background-color: #a9cce3;
+  background-image: url("../images/forward_year.png")  
+}
+#back__Month-js {
+  background-color: #a9cce3;
+  background-image: url("../images/back_month.png")  
+}
+#back__Year-js {
+  background-color: #a9cce3;
+  background-image: url("../images/back_year.png")  
+}
