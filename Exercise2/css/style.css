@@ -1,7 +1,7 @@
 body {
   font-family: Georgia, Times, "Times New Roman", serif; 
   font-size: 0.6875em;
-  background: rgb(0,0,0);
+  background: #121214;
 }
 .container {
   background-color: #121214;
@@ -16,6 +16,7 @@ body {
   width: 25%;
   height: 65%;
   margin-left: 20px;
+  margin-top: 20px;
 }
 .block__left {
   float: left;
