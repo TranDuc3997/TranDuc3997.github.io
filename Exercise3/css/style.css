@@ -12,7 +12,7 @@ body {
   padding-left: 70px;
   background-image: url(../images/header.png);
   background-repeat: no-repeat;
-  color: #7e7e7e;
+  color: #595959;
 }
 
 .block__header {
@@ -50,7 +50,7 @@ body {
   margin-bottom: 15px;
 }
 .block__sidebar a {
-  color: #7e7e7e;
+  color: #595959;
 }
 
 .block__content {
@@ -76,7 +76,7 @@ body {
   margin-bottom: 15px;
 }
 .block__sidebar p {
-  border-top: 1px solid #7e7e7e;
+  border-top: 1px solid #595959;
   border-bottom: 1px solid #2c2c2c;
   padding: 28px 0px 67px 11px;
   margin: 20px 20px 20px 20px;
@@ -84,7 +84,9 @@ body {
 .block__content--margin {
   margin: 0px 10px 45px 15px;
 }
-
+.block__content--margin  p{
+  margin-right: 10px;
+}
 .--color{
   color: #fff;
 }
@@ -106,7 +108,6 @@ body {
 }
 .block__footer {
   width: 654px;
-  
   color: #595959;
   font-size: 10px;
   line-height: 1.5;
