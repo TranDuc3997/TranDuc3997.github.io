@@ -1,7 +1,7 @@
 body {
   margin: 0 auto;
   width: 1265px;
-  height: 1105px;
+  height: auto;
   background-color: #121214;
   font-family: Georgia, Times, "Times New Roman", serif; 
   font-size: 11px; 
@@ -45,7 +45,9 @@ body {
 .block__sidebar ul {
   list-style-image: url(../images/arrlist.gif);
 }
-
+.block__sidebar li {
+  margin-bottom: 15px;
+}
 .block__sidebar a {
   color: #7e7e7e;
 }
@@ -68,8 +70,12 @@ body {
   background-color: #121214;
   color: #121214;
   border-top: 1px dotted #595959;
+  margin-top: 40px;
 }
-
+.block__sidebar p {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .block__content--margin {
   margin: 0px 10px 45px 15px;
 }
@@ -89,3 +95,4 @@ body {
   padding-left: 15px;
   text-decoration: none;
 }
+.--padi

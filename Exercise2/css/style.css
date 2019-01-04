@@ -73,17 +73,20 @@ body {
 }
 .block__left__bottom__content p {
   margin-top: 0px;
+  margin-bottom: 0px;
 }
 .block__left__bottom__content__list {
   list-style-image: url(../images/arrlist.gif);
   padding-left: 10px;
   float: left;
-
+  margin-top: 25px;
 }
 .block__left__bottom__content__list li {
   padding-bottom: 15px;
 }
-
+.block__sidebar ul {
+  padding-bottom: 15px;
+}
 .block__right hr {
   border-color: #242328;
   background-color: #242328;
