@@ -64,7 +64,7 @@ body{
 	font-style: italic;
 }
 
-.block_blogroll ul li{
+.block_blogroll ul li {
   margin:0px 0px 1px 0px;
   font-size: 12px;
   line-height: 1.25;
@@ -74,11 +74,14 @@ body{
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
-
+.block_blogroll li {
+  background-color:#f9f1c2;
+}
 .block_blogroll ul{
 	list-style-type:none;
 	padding:0px;
 	margin:0px;
+	background-color: white;
 }
 .block_blogroll ul .link__style{
 	text-decoration:none;
@@ -91,130 +94,131 @@ body{
 }
 
 .article2{
-	border-top:4px solid #f7a418;
-	padding:20px 0px 22px 14px;
-	display:flex;
-	background-color:white;
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
+  border-top:4px solid #f7a418;
+  padding:20px 0px 22px 14px;
+  display:flex;
+  background-color:white;
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
 .article2 .article__content{
-	width:178px;
-	margin-left:25px;
+  width:178px;
+  margin-left:25px;
 }
 
 .article2 .article__content .article__title{
-	font-size: 15px;
-	line-height: 1;
-	color: #000000;
-	margin-top:4px;
+  font-size: 15px;
+  line-height: 1;
+  color: #000000;
+  margin-top:4px;
 }
 
 .article__date{
-	margin-bottom:5px;
-	font-size: 11px;
-	line-height: 1.36;
-	color: #595959;
+  margin-bottom:5px;
+  font-size: 11px;
+  line-height: 1.36;
+  color: #595959;
 }
 
 .article2 .article__content .article__info{
-	font-size: 11px;
-	line-height: 1.27;
-	color: #000000;
+  font-size: 11px;
+  line-height: 1.27;
+  color: #000000;
+  margin-right: 10px;
 }
 
 .article2 .article__content .link__style{
-	color:#0A6395;
+  color:#0A6395;
 }
 
 .article2 .picture{
-	height:85px;
+  height:85px;
 }
 
 .credit{
-	height:23px;
-	padding-top:12px;
-	padding-left:23px;
-	background-color:#f4f4e6;
-	font-size: 11px;
-	line-height: 1.27;
-	color: #000000;
-	background-image:url(../images/img3.png);
+  height:23px;
+  padding-top:12px;
+  padding-left:23px;
+  background-color:#f4f4e6;
+  font-size: 11px;
+  line-height: 1.27;
+  color: #000000;
+  background-image:url(../images/img3.png);
   background-repeat:no-repeat;
-	margin-bottom: 0px;
-	margin-top:0px;
-	padding-bottom:12px;
+  margin-bottom: 0px;
+  margin-top:0px;
+  padding-bottom:12px;
 }
 
 .credit .link__style{
-	font-weight:bold;	
-	color:#0A6395;
-	text-decoration:none;
+  font-weight:bold;	
+  color:#0A6395;
+  text-decoration:none;
 }
 .font_weight_bold{
-	font-weight:bold;
+  font-weight:bold;
 }
 
 .font_color_blue{
-	color:#0A6395;
+  color:#0A6395;
 }
 
 .article3{
-	border-top:4px solid #f7a418;
-	padding:24px 146px 11px 23px;
-	background-color:white;
-	background-image:url(../images/img4.png);
-	background-repeat:no-repeat;
-	background-position:right;
+  border-top:4px solid #f7a418;
+  padding:30px 146px 11px 23px;
+  background-color:white;
+  background-image:url(../images/img4.png);
+  background-repeat:no-repeat;
+  background-position:right;
 }
 
 .article3 .article__content{
-	font-size: 12px;
-	line-height: 15px;
-	color: #000000;
-	font-family: "Times New Roman";	
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+  font-family: "Times New Roman";	
 }
 
 .article3 .link__style{
-	font-size: 12px;
-	line-height: 1.25;
-	color: #0a6395;
-	font-family: "Times New Roman";	
-	text-decoration:none;
+  font-size: 12px;
+  line-height: 1.25;
+  color: #0a6395;
+  font-family: "Times New Roman";	
+  text-decoration:none;
 }
 
 .block_competion{
-	padding-top: 5px;
-	margin-top:8px;	
-	border-top:1px solid #595959;
+  padding-top: 5px;
+  margin-top:8px;	
+  border-top:1px solid #595959;
 }
 
 .title__competions{
-	font-size: 14px;
-	line-height: 1.07;
-	color: #000000;
-	font-family: "Times New Roman";
-    font-weight: bold;
+  font-size: 14px;
+  line-height: 1.07;
+  color: #000000;
+  font-family: "Times New Roman";
+  font-weight: bold;
 }
 
 .competion__info{
-	padding:11px 47px 8px 8px;
-	list-style-type:none;
-	margin:0px;
-	background-color:white;
-	border:1px solid #595959;
+  padding:11px 47px 8px 8px;
+  list-style-type:none;
+  margin:0px;
+  background-color:white;
+  border:1px solid #595959;
 }
 
 .competion__info li{
-	font-size: 12px;
-	line-height: 1.25;
-	color: #4d5d73;
-	font-family: "Times New Roman";
+  font-size: 12px;
+  line-height: 1.25;
+  color: #4d5d73;
+  font-family: "Times New Roman";
 }
 
 .block_competion .competion__info .link__style{
-	color:#4d5d73;
-	text-decoration:none;
+  color:#4d5d73;
+  text-decoration:none;
 }

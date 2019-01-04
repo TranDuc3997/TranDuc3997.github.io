@@ -46,6 +46,7 @@ body {
 .block__sidebar ul {
   list-style-image: url(../images/arrlist.gif);
   margin-left: 5px;
+  background-color: white
 }
 .block__sidebar li {
   margin-bottom: 15px;
