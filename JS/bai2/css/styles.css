@@ -1,11 +1,22 @@
 #table {
+  width: 500;
+  height: 250;
   border-collapse: collapse;
-  }
+}
   
 #table, th, td {
-  border: 1px solid black;
-  width: 60px;
+  border: 2px solid black;
+}
+th ,td {
+  height: 30px;
+  width: 25px;
+}
+#value {
+  width: 250px;
   height: 35px;
+  background-image: url(../images/Calendar.png);
+  background-repeat: no-repeat;
+  background-position: right;
 }
 #head {
   color: red;
@@ -20,19 +31,23 @@
 .day-js:hover {
   background-color: #00ace6;
 }
-#forward__Month-js {
+#forward__Month-js ,#forward__Year-js ,#back__Month-js ,#back__Year-js {
+  background: no-repeat;
   background-color: #a9cce3;
-  background-image: url("../images/forward_month.png")  
+}
+#forward__Month-js {
+  background-image: url("../images/forward_month.png");
 }
 #forward__Year-js {
-  background-color: #a9cce3;
-  background-image: url("../images/forward_year.png")  
+  background-image: url("../images/forward_year.png");  
 }
 #back__Month-js {
-  background-color: #a9cce3;
-  background-image: url("../images/back_month.png")  
+  background-image: url("../images/back_month.png");  
 }
 #back__Year-js {
-  background-color: #a9cce3;
-  background-image: url("../images/back_year.png")  
+  background-image: url("../images/back_year.png");
+}
+#months , #years {
+  width: 100%;
+  height: 100%
 }
