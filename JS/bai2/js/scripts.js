@@ -102,7 +102,7 @@ function createSelectMonth(th){
 }
 function createSelectYear(th){
   var select = document.createElement("SELECT");
-  var iYear = 2000;
+  var iYear = 1950;
   while(iYear < 2051){
     var year = document.createElement("OPTION");
     year.innerHTML = iYear++;
