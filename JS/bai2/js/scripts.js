@@ -8,7 +8,7 @@ function createCalendar() {
   var tr = document.createElement("TR");
   tr.setAttribute("id","nav");
   table.appendChild(tr);
-  for(var i = 0 ; i < 7 ; i++){
+  for(var i = 0 ; i < 6 ; i++){
     var th = document.createElement("TH");
     switch(i){
       case 0 :{
@@ -19,11 +19,20 @@ function createCalendar() {
         th.setAttribute("id","back__Month-js");
         break;
       }
-      case 5: {
+      case 2: {
+        th.setAttribute("colspan","2");
+        th = createSelectMonth(th);
+        break;
+      }
+      case 3: {
+        th = createSelectYear(th);
+        break;
+      }
+      case 4: {
         th.setAttribute("id","forward__Month-js");
         break;
       }
-      case 6: {
+      case 5: {
         th.setAttribute("id","forward__Year-js");
         break;
       }
@@ -78,4 +87,27 @@ function daysInWeek(idate,iMonth,iYear) {
 function addDay(idate,iMonth,iYear) {
   var text = document.getElementById("value");
   text.innerHTML = idate + "/" + iMonth + "/" + iYear;
+}
+function createSelectMonth(th){
+  var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  var select = document.createElement("SELECT");
+  var iMonth = 0;
+  while(iMonth < 12){
+    var month = document.createElement("OPTION");
+    month.innerHTML = arrMonth[iMonth++];
+    select.appendChild(month);
+  }
+  th.appendChild(select);
+  return th;
+}
+function createSelectYear(th){
+  var select = document.createElement("SELECT");
+  var iYear = 2000;
+  while(iYear < 2051){
+    var year = document.createElement("OPTION");
+    year.innerHTML = iYear++;
+    select.appendChild(year);
+  }
+  th.appendChild(select);
+  return th;
 }
