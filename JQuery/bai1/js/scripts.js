@@ -1,19 +1,24 @@
-
 var index_prev = 0
-$(".button").click(function() {
-  var sliderSplit = this.id.split('-');
-  var index = parseInt(sliderSplit[1]);
-  if(index == 1){
-    $("#modal-1").css('display','block').css('top','8px').animate({top:60},500);
-  }
-  else{
-    $("#modal-2").css('display','block').css('top','8px').animate({top:60},500);
-  }
+$(function(){
+  $(".button").click(function() {
+    var sliderSplit = this.id.split('-');
+    var index = parseInt(sliderSplit[1]);
+    if(index == 1){
+      $("#modal-1").css('display','block').css('top','8px').animate({top:60},500);
+    }
+    else{
+      $("#modal-2").css('display','block').css('top','8px').animate({top:60},500);
+    }
+  });
 });
-$(".close").click(function(){
-  var sliderSplit = this.id.split('-');
-  $("#modal-"+sliderSplit[1]).css("display", "none");
+
+$(function(){
+  $(".close").click(function(){
+    var sliderSplit = this.id.split('-');
+    $("#modal-"+sliderSplit[1]).css("display", "none");
+  });
 });
+
 $(function() {
   $('.btn__hidden').click(function() {
     var sliderSplit = this.id.split('-'); // split the string at the hyphen

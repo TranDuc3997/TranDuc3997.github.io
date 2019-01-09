@@ -1,31 +1,31 @@
-body{
-  font-family:  Arial, san-serif;
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family:  "Arial", Verdana, Sans-serif;
+  font-size: 12px;
+  color: #000000;
 }
 
-.wrapper{
+.container {
   width:316px;
-  margin:0 auto;
+  margin: 10px auto 0px auto;
   background-color:#e6f3fb;
-  padding-top: 2px;
-  padding-left:11px;
-  padding-right:9px;
-  padding-bottom:17px;
+  padding: 2px 9px 17px 11px;
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.title{
+.title {
   font-weight:bold;
   margin:0px 0px 0px 1px;
-  font-size: 16px;
   line-height: 0.9375;
-  color: #000000;
-  font-family: "Times New Roman";	
   padding-bottom:1px;
 }
 
-.article1{
+.article__blogroll {
   border-top:4px solid #f7a418;
   padding: 7px 0px 12px 8px;
   display:flex;
@@ -35,38 +35,33 @@ body{
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.article1 .picture{
+.article__blogroll .picture {
   width:156px;
   height:81px;
 }
 
-.article1 .article__content{
+.article__blogroll .article__content {
   width:107px;
   margin:0px 0px 0px 7px;
 }
 
-.article__title{
-  font-size: 12px;
-  line-height: 15px;
-  color: #0a6395;
-  font-family: "Arial";
+.article__title {
   font-weight: bold;
 }
 
-.article__info{
-	font-size: 12px;
+.article__info {
 	line-height: 1.25;
-	color: #000000;
-	font-family: "Arial";
 }
 
-.font__style--italic{
+.font__style--italic {
 	font-style: italic;
 }
-
-.block_blogroll ul li {
+.link__style {
+  color: #0A6395;
+  text-decoration:none;
+}
+.block__blogroll ul li {
   margin:0px 0px 1px 0px;
-  font-size: 12px;
   line-height: 1.25;
   padding: 7px 0px 12px 10px;
   background-color:#f9f1c2;
@@ -74,26 +69,23 @@ body{
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
-.block_blogroll li {
+.block__blogroll li {
   background-color:#f9f1c2;
 }
-.block_blogroll ul{
+.block__blogroll ul {
 	list-style-type:none;
-	padding:0px;
-	margin:0px;
 	background-color: white;
 }
-.block_blogroll ul .link__style{
-	text-decoration:none;
-	color:#0A6395;
-}
 
-.block_horoscopes{
+
+.block__horoscopes {
 	margin-bottom:21px;
 	padding-top: 4px;
 }
-
-.article2{
+.block__news {
+  margin-top: 20px;
+}
+.article__horoscopes {
   border-top:4px solid #f7a418;
   padding:20px 0px 22px 14px;
   display:flex;
@@ -103,69 +95,44 @@ body{
   box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
-.article2 .article__content{
+.article__horoscopes .article__content {
   width:178px;
   margin-left:25px;
 }
 
-.article2 .article__content .article__title{
-  font-size: 15px;
-  line-height: 1;
-  color: #000000;
+.article__horoscopes .article__content .article__title {
   margin-top:4px;
+  font-size: 15px;
+  color: #000000;
 }
 
-.article__date{
+.article__date {
   margin-bottom:5px;
-  font-size: 11px;
   line-height: 1.36;
   color: #595959;
 }
-
-.article2 .article__content .article__info{
-  font-size: 11px;
-  line-height: 1.27;
-  color: #000000;
-  margin-right: 10px;
+.article__horoscopes .article__content .article__info {
+  margin-left: -10px;
 }
-
-.article2 .article__content .link__style{
-  color:#0A6395;
-}
-
-.article2 .picture{
+.article__horoscopes .picture {
   height:85px;
 }
-
-.credit{
+.--decoration {
+  text-decoration: underline;
+}
+.credit {
   height:23px;
-  padding-top:12px;
-  padding-left:23px;
   background-color:#f4f4e6;
-  font-size: 11px;
   line-height: 1.27;
-  color: #000000;
   background-image:url(../images/img3.png);
   background-repeat:no-repeat;
-  margin-bottom: 0px;
-  margin-top:0px;
-  padding-bottom:12px;
+  padding: 12px 0px 12px 23px;
 }
-
-.credit .link__style{
+.credit a {
   font-weight:bold;	
-  color:#0A6395;
-  text-decoration:none;
-}
-.font_weight_bold{
-  font-weight:bold;
 }
 
-.font_color_blue{
-  color:#0A6395;
-}
-
-.article3{
+.article__news {
   border-top:4px solid #f7a418;
   padding:30px 146px 11px 23px;
   background-color:white;
@@ -174,51 +141,33 @@ body{
   background-position:right;
 }
 
-.article3 .article__content{
-  font-size: 12px;
+.article__news .article__content {
   line-height: 15px;
-  color: #000000;
-  font-family: "Times New Roman";	
+  margin-bottom: 5px;
 }
 
-.article3 .link__style{
-  font-size: 12px;
+.article__news {
   line-height: 1.25;
-  color: #0a6395;
-  font-family: "Times New Roman";	
-  text-decoration:none;
 }
 
-.block_competion{
+.block__competion {
   padding-top: 5px;
   margin-top:8px;	
-  border-top:1px solid #595959;
+  border-top:2px solid #595959;
 }
 
-.title__competions{
-  font-size: 14px;
+.title__competions {
   line-height: 1.07;
-  color: #000000;
-  font-family: "Times New Roman";
   font-weight: bold;
 }
 
-.competion__info{
+.competion__info {
   padding:11px 47px 8px 8px;
   list-style-type:none;
   margin:0px;
   background-color:white;
   border:1px solid #595959;
 }
-
-.competion__info li{
-  font-size: 12px;
-  line-height: 1.25;
-  color: #4d5d73;
-  font-family: "Times New Roman";
-}
-
-.block_competion .competion__info .link__style{
+.competion__info a {
   color:#4d5d73;
-  text-decoration:none;
 }
