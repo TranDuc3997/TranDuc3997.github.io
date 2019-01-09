@@ -1,0 +1,43 @@
+body {
+  font-size: 15px;
+  font-family: "Times New Roman", Times, serif;
+}
+.container {
+  margin: 0 auto;
+  height: auto;
+  width: 345px;
+}
+.container ul {
+  width: 270px;
+  list-style-type: none;
+  margin: 0 auto;
+  padding-left: 0px;
+  border: 2px solid #A9862A;
+}
+.container image {
+  display: flex;
+}
+.hidden {
+  display: none;
+  width: 100%;
+  padding-left: 10px;
+}
+.button {
+  margin-left: 60px;
+  margin-top: 10px;
+}
+.modal {
+  display: none;
+  width: 345px;
+  position: absolute;
+  border: 2px solid #A9862A;
+  background-color: white;
+  padding: 10px 10px 10px 10px;
+}
+.close {
+  position: absolute;
+  top: -15px;
+  right: -25px;
+}
+
+
