@@ -88,11 +88,8 @@ body {
   padding-bottom: 15px;
 }
 .block__right hr {
-  border-color: #242328;
-  background-color: #242328;
-  color: #242328;
+  border: 1px solid #353439;
   margin:95px 25px 0px 25px;
-  border-top: 1px soild #353439;
 }
 
 .block__right img {
