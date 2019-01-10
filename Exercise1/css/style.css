@@ -1,21 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
+body {
   font-family: Georgia, Times, "Times New Roman", serif; 
   font-size: 15px; 
 }
-.page{
+.page {
   width: 500px; 
-  margin: 0 auto; 
+  margin: 10px auto 0 auto;
   border: 1px solid #0033FF;
   padding-bottom: 6px; 
 }
 h1{
   margin-bottom: 5px;
 }
-.user__avatar{
+.user__avatar {
   float: left; 
   margin-left: 14px; 
   margin-right: 5px; 
@@ -23,52 +23,51 @@ h1{
   height: 100px;
 }
 
-.title__profile{
+.title__profile {
   background-repeat: no-repeat; 
   background-position: bottom; 
   background-image: url("../images/shadowTitle.png");
  }
-.user__info{
+.user__info {
   height: 100px;
   overflow: scroll;
   padding-left: 10px;
 }
 
-.title{
+.title {
   font-size: 18px;
   line-height: 1.24; 
   margin-top: 0px; 
   padding-left: 2px; 
 }
 
-.title__fact{
+.title__fact {
   margin-top: 15px;
+  margin-bottom: 20px;
 }
 
-.user__fact{
+.user__fact {
   margin-right: 50px;
 }
-.fact__content{
+.fact__content {
   list-style: none;
   margin-left: 40px;
   margin-bottom: 60px;
-
 }
-
-li{
-  padding: 4px 0;
+.fact__content li {
+  margin-bottom: 10px;
 }
-ul li:before{
+ul li:before {
   content: url("../images/star.gif");
   margin-right: 4px;
 }
 
-.comment__posted{
+.comment__posted {
   position: relative;
   height: 60px;
 }
 
-.comment__content:after{
+.comment__content:after {
   position:absolute;
   border-left: 13px solid transparent;
   border-right: 13px solid transparent;
@@ -80,7 +79,7 @@ ul li:before{
   content: "";
 }
   
-.comment__content{
+.comment__content {
   position:absolute;
   background-color:#ECECEC;
   width:475px; 
@@ -91,7 +90,7 @@ ul li:before{
   margin-left:2px;
 }
   
-.comment__detail{
+.comment__detail {
   position:absolute;
   top:44px;
   left:55px;
@@ -102,7 +101,7 @@ a{
   text-decoration: none;
 }
 
-.form__title{
+.form__title {
   font-size:17px;
   line-height:0.6;
   margin-bottom:3px;
