@@ -16,7 +16,16 @@ function drawPieSlice(ctx,centerX,centerY, radius, startAngle, endAngle, color )
     ctx.arc(centerX,centerY, radius, startAngle, endAngle);
     ctx.fill();
     ctx.closePath();
-  }
+}
+/**
+ * 
+ * @param {*} ctx 
+ * @param {*} startX 
+ * @param {*} startY 
+ * @param {*} endX 
+ * @param {*} endY 
+ * @param {*} color 
+ */
 function drawLine(ctx, startX, startY, endX, endY,color){
     ctx.fillStyle = color
     ctx.beginPath();
@@ -66,24 +75,25 @@ function drawLine(ctx, startX, startY, endX, endY,color){
     }
 
     this.drawLineSuccess = function() {
-        drawLine(ctx,20,20,param.centerX,param.centerY,color.topSuccess);
+        drawLine(ctx,100,param.centerX,param.centerX,param.centerY,color.topSuccess);
+        drawLine(ctx,0,150,100,250,color.topSuccess);
     }
 
     this.drawLineFail = function() {
-        drawLine(ctx,600-20,600-20,param.centerX + fixX,param.centerY + fixY,color.topSuccess);
+        drawLine(ctx,500,100,550-param.centerX,param.centerY-120,color.topSuccess);
     }
 
     this.drawText = function() {
-        // ctx.beginPath();
-        // ctx.font = "14px Arial";
-        // ctx.fillStyle = "black";
-        // if (!check) {
-        //     ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", lineSuccess[0], lineSuccess[3] - 10);
-        //     ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", lineFail[2], lineFail[3] - 10);
-        // } else {
-        //     ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", lineSuccess[2], lineSuccess[3] - 10);
-        //     ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", lineFail[0], lineFail[3] - 10);
-        // }   
+        ctx.beginPath();
+        ctx.font = "14px Arial";
+        ctx.fillStyle = "black";
+        if (!check) {
+            ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", lineSuccess[0], lineSuccess[3] - 10);
+            ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", lineFail[2], lineFail[3] - 10);
+        } else {
+            ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", lineSuccess[2], lineSuccess[3] - 10);
+            ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", lineFail[0], lineFail[3] - 10);
+        }   
     }
       this.draw = function() {
           for (i = 0; i <= fix.slice_Height; i++) {
@@ -92,7 +102,8 @@ function drawLine(ctx, startX, startY, endX, endY,color){
           this.drawTitle();
           this.drawLineSuccess();
           this.drawLineFail();
-        //   this.drawText();
+          this.drawLineFail();
+          this.drawText();
       }
 
   };

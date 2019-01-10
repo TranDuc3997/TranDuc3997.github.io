@@ -9,11 +9,14 @@ $(document).ready(function() {
     $("#nav_next").click(function() {
         changeIndexNext();
         clearInterval(interval);
+        createAutoPlay();
     });
     $("#nav_prev").click(function() {
         changeIndexPrev();
         clearInterval(interval);
+        createAutoPlay();
     });
+    
 });
 function createAutoPlay(){
    interval = setInterval(function(){
@@ -78,6 +81,7 @@ function clickNav() {
             moveIndex1(index);
         }
     clearInterval(interval);
+    createAutoPlay();
     });
 }
 function setOpacity(index){
