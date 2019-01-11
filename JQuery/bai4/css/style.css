@@ -1,0 +1,9 @@
+.container {
+  position: relative;
+}
+.img--position {
+  float: right;
+}
+.leaves--hidden {
+  position: absolute;
+}
