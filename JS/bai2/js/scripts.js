@@ -1,4 +1,6 @@
 var table,iMonth,iYear;
+var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
 /**
  * Initialization value Calendar
  */
@@ -10,8 +12,6 @@ function initCalendar() {
   var yselect = document.createElement("SELECT");
   var tr = document.createElement("TR");
   table.setAttribute("id","table-js");
-  var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
   tr.setAttribute("id","nav-js");
   iMonth = 0;
   iYear = 1950;
@@ -71,6 +71,7 @@ function initCalendar() {
 }
 /**
  * Create days in Month Calendar
+ * @param {} table 
  */
 function createCalendar(table) {
   var count = 1;
@@ -99,18 +100,33 @@ function createCalendar(table) {
   }  
   calendar.appendChild(table);
 }
+/**
+ * Get value dates in month
+ */
 function datesInMonth() {
   return 32 - new Date(iYear, iMonth, 32).getDate();// return number of days in the month
 }
+/**
+ * Get value day in week
+ * @param {value day selected} idate 
+ */
 function daysInWeek(idate) {
   return new Date(iYear, iMonth,idate).getDay();
 }
+/**
+ * Return selected date value
+ * @param {Selected date value} idate 
+ */
 function addDay(idate){
   var text = document.getElementById("value-js");
   text.value = idate.padStart(2, '0') + "/" + (parseInt(iMonth)+1+"").padStart(2,'0') + "/" + iYear;
 }
-
-function createSelectMonth(th,select,arrMonth){
+/**
+ * 
+ * @param {Index Element} th 
+ * @param {*} select 
+ */
+function createSelectMonth(th,select){
   var nowMonth = new Date().getMonth;
   select.setAttribute("onchange","selectedMonth(event)")
   while(iMonth < 12){
@@ -125,6 +141,11 @@ function createSelectMonth(th,select,arrMonth){
   th.appendChild(select);
   return th;
 }
+/**
+ * 
+ * @param {*} th 
+ * @param {*} select 
+ */
 function createSelectYear(th,select){
   var nowYear = new Date().getFullYear();
   select.setAttribute("onchange","selectedYear(event)")
@@ -139,26 +160,49 @@ function createSelectYear(th,select){
   th.appendChild(select);
   return th;
 }
+/**
+ * Create new Calendar with value selected 
+ * @param {*} table 
+ */
 function newCalendar (table){
   removeChildTable(table);
   createCalendar(table);
 }
+
+/**
+ * Remove day in calender
+ * @param {Elenment table} table 
+ */
 function removeChildTable(table) {
   for(var irow = 0 ; irow < 6 ; irow++)
     table.removeChild(table.childNodes[2]);
 }
+/**
+ * 
+ * @param {value Month Selected} evt 
+ */
 function selectedMonth(evt){
   iMonth = evt.target.value;
   newCalendar(table);
 }
+/**
+ * 
+ * @param {value Year selected} evt 
+ */
 function selectedYear(evt) {
   iYear = evt.target.value
   newCalendar(table);
 }
+/**
+ * Change value Year
+ */
 function changeYear(){
   var  select = document.getElementById("years-js");
   select.selectedIndex = iYear - 1950;
 }
+/**
+ * Change value Month
+ */
 function changeMonth() {
   var  select = document.getElementById("months-js");
   if(iMonth > 11) {
@@ -173,21 +217,34 @@ function changeMonth() {
   }
   select.selectedIndex = iMonth;
 }
+/**
+ * reduce value Year
+ */
 function backYear() {
   iYear--;
   changeYear();
   newCalendar(table);
 }
+/**
+ * reduce value Month
+ */
 function backMonth() {
   iMonth--;
   changeMonth();
   newCalendar(table);
 }
+/**
+ * increase value Month
+ */
 function forwardMonth() {
   iMonth++;
   changeMonth();
   newCalendar(table);
 }
+/**
+ * 
+  increase value Year
+ */
 function forwardYear() {
   iYear++;
   changeYear();

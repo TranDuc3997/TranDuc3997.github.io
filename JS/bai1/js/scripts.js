@@ -26,6 +26,7 @@ function addName() {
     div.setAttribute("id",index);
     list.appendChild(div);
   }
+  name = "";
 }
 function checkName(name,list){
   if(name.trim().length > 0){
