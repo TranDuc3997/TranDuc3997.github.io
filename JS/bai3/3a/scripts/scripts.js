@@ -27,7 +27,8 @@ function drawPieSlice(ctx,centerX,centerY, radius, startAngle, endAngle, color )
  * @param {*} color 
  */
 function drawLine(ctx, startX, startY, endX, endY,color){
-    ctx.fillStyle = color
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(startX,startY);
     ctx.lineTo(endX,endY);
@@ -73,14 +74,14 @@ function drawLine(ctx, startX, startY, endX, endY,color){
         ctx.fillText(title, 20, 800);
         ctx.stroke();
     }
-
     this.drawLineSuccess = function() {
-        drawLine(ctx,100,param.centerX,param.centerX,param.centerY,color.topSuccess);
-        drawLine(ctx,0,150,100,250,color.topSuccess);
+        var startx = param.centerX + param.radius/2;
+        drawLine(ctx,startx,param.centerX,startx,param.centerY,color.botSuccess);
+        // drawLine(ctx,0,150,100,250,color.botSuccess);
     }
 
     this.drawLineFail = function() {
-        drawLine(ctx,500,100,550-param.centerX,param.centerY-120,color.topSuccess);
+        drawLine(ctx,param.centerX + param.radius/2,100,550-param.centerX,param.centerY-120,color.botFail);
     }
 
     this.drawText = function() {
