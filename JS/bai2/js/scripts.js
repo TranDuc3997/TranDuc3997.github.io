@@ -1,4 +1,7 @@
 var table,iMonth,iYear;
+/**
+ * Initialization value Calendar
+ */
 function initCalendar() {
   var calendar = document.getElementById("calendar");
   calendar.innerHTML = " ";
@@ -6,10 +9,10 @@ function initCalendar() {
   var mselect = document.createElement("SELECT");
   var yselect = document.createElement("SELECT");
   var tr = document.createElement("TR");
-  table.setAttribute("id","table");
+  table.setAttribute("id","table-js");
   var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
-  tr.setAttribute("id","nav");
+  tr.setAttribute("id","nav-js");
   iMonth = 0;
   iYear = 1950;
   table.appendChild(tr);
@@ -19,11 +22,13 @@ function initCalendar() {
       case 0 :{
         th.setAttribute("id","back__Year-js");
         th.setAttribute("onclick","backYear()");
+        th.innerHTML = "&#8647;";
         break;
       }
       case 1: {
         th.setAttribute("id","back__Month-js");
         th.setAttribute("onclick","backMonth()");
+        th.innerHTML = "&#8592;";
         break;
       }
       case 2: {
@@ -38,23 +43,25 @@ function initCalendar() {
       case 4: {
         th.setAttribute("id","forward__Month-js");
         th.setAttribute("onclick","forwardMonth()");
+        th.innerHTML = "&#8594;";
         break;
       }
       case 5: {
         th.setAttribute("id","forward__Year-js");
         th.setAttribute("onclick","forwardYear()");
+        th.innerHTML = "&#8649;";
         break;
       }
     }
     tr.appendChild(th);
   }
   var tr = document.createElement("TR");
-  tr.setAttribute("id","head");
+  tr.setAttribute("id","head-js");
   table.appendChild(tr);
   for(var  j = 0 ; j < 7 ; j++ ){
     var th = document.createElement("TH");
     th.innerHTML = listDate[j];
-    th.setAttribute("id","head"+j);
+    th.setAttribute("id","head-js"+j);
     tr.appendChild(th);
   }
   iMonth = mselect.options[mselect.selectedIndex].value;
@@ -62,6 +69,9 @@ function initCalendar() {
   createCalendar(table);
   calendar.appendChild(table);
 }
+/**
+ * Create days in Month Calendar
+ */
 function createCalendar(table) {
   var count = 1;
   var date = datesInMonth();
@@ -90,15 +100,16 @@ function createCalendar(table) {
   calendar.appendChild(table);
 }
 function datesInMonth() {
-  return 32 - new Date(iYear, iMonth, 32).getDate();
+  return 32 - new Date(iYear, iMonth, 32).getDate();// return number of days in the month
 }
 function daysInWeek(idate) {
   return new Date(iYear, iMonth,idate).getDay();
 }
 function addDay(idate){
-  var text = document.getElementById("value");
+  var text = document.getElementById("value-js");
   text.value = idate.padStart(2, '0') + "/" + (parseInt(iMonth)+1+"").padStart(2,'0') + "/" + iYear;
 }
+
 function createSelectMonth(th,select,arrMonth){
   var nowMonth = new Date().getMonth;
   select.setAttribute("onchange","selectedMonth(event)")
@@ -110,7 +121,7 @@ function createSelectMonth(th,select,arrMonth){
     month.innerHTML = arrMonth[iMonth++];
     select.appendChild(month);
   }
-  select.setAttribute("id","months")
+  select.setAttribute("id","months-js")
   th.appendChild(select);
   return th;
 }
@@ -124,7 +135,7 @@ function createSelectYear(th,select){
     year.innerHTML = iYear++;
     select.appendChild(year);
   }
-  select.setAttribute("id","years");
+  select.setAttribute("id","years-js");
   th.appendChild(select);
   return th;
 }
@@ -145,11 +156,11 @@ function selectedYear(evt) {
   newCalendar(table);
 }
 function changeYear(){
-  var  select = document.getElementById("years");
+  var  select = document.getElementById("years-js");
   select.selectedIndex = iYear - 1950;
 }
 function changeMonth() {
-  var  select = document.getElementById("months");
+  var  select = document.getElementById("months-js");
   if(iMonth > 11) {
     iMonth -= 12;
     ++iYear
