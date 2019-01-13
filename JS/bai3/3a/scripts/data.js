@@ -4,8 +4,8 @@ function eventWindowLoaded() {
 }
 function Canvas() {
     var myRate = {
-        fail: 0.7,
-        success: 0.3
+        fail: 0.2,
+        success: 0.8
     }
     var color = {
         topSuccess: "#009ED5",

@@ -34,19 +34,35 @@ function drawLine(ctx, startX, startY, endX, endY,color){
     ctx.lineTo(endX,endY);
     ctx.stroke();
 }
+/**
+ * Returns array with indexLine[0]: startX line vertical succes
+ *                    indexLine[1]: startX line vertical fail
+ *                    indexLine[2]: EndX line horizontal succes
+ *                    indexLine[3]: EndX line horizontal fail
+ * @param {*} success 
+ * @param {*} fail 
+ * @param {*} centerX 
+ * @param {*} radius 
+ */
 function computeLine(success,fail,centerX,radius){
     var indexLine = [,];
     if(success == fail){
         indexLine[0] = centerX;
-        indexLine[1] = centerX + radius / 2;
+        indexLine[1] = centerX - 100;
+        indexLine[2] = centerX + radius / 2;
+        indexLine[3] = indexLine[2] + 100;
     }
     else if (success < fail) {
-        indexLine[0] = centerX + radius *  (success/0.5);
-        indexLine[1] = centerX - radius * (success/0.5);
+        indexLine[0] = centerX + radius *  (success/0.5)
+        indexLine[1] = indexLine[0] + 100;
+        indexLine[2] = centerX - radius * (success/0.5);
+        indexLine[3] = indexLine[2] - 100;
     }
     else {
-        indexLine[0] = centerX - (radius /2) * success;
-        indexLine[1] = centerX + radius * success;
+        indexLine[0] = centerX - (radius /2 * success);
+        indexLine[1] = indexLine[0] - 100;
+        indexLine[2] = centerX + radius * success;
+        indexLine[3] = indexLine[2] + 100;
     }
     return indexLine;
 }
@@ -94,25 +110,26 @@ function computeLine(success,fail,centerX,radius){
     this.drawLineSuccess = function() {
         var startSuccess =  valueLine[0];
         drawLine(ctx,startSuccess,param.centerX,startSuccess,param.centerY,color.botSuccess);
-        // drawLine(ctx,0,150,100,250,color.botSuccess);
+        drawLine(ctx,startSuccess,param.centerX,valueLine[1],param.centerX ,color.botSuccess);
     }
 
     this.drawLineFail = function() {
-        var startFail = valueLine[1];
-        console.log();
-        drawLine(ctx,startFail,param.centerX,startFail,param.centerY-120,color.botFail);
+        var startFail = valueLine[2];
+        drawLine(ctx,startFail,param.centerX,startFail,param.centerY - 120,color.botFail);
+        drawLine(ctx,startFail,param.centerX,valueLine[3],param.centerX ,color.botFail);
     }
 
     this.drawText = function() {
         ctx.beginPath();
         ctx.font = "14px Arial";
         ctx.fillStyle = "black";
+        var textY = param.centerX - 10;
         if (!check) {
-            ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", lineSuccess[0], lineSuccess[3] - 10);
-            ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", lineFail[2], lineFail[3] - 10);
+            ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", valueLine[0], textY);
+            ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", valueLine[3], textY);
         } else {
-            ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", lineSuccess[2], lineSuccess[3] - 10);
-            ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", lineFail[0], lineFail[3] - 10);
+            ctx.fillText(myrate.success * 100 + "% ĐÃ ĐẠT", valueLine[0] - 100, textY);
+            ctx.fillText(myrate.fail * 100 + "% CHƯA ĐẠT", valueLine[3] - 100, textY);
         }   
     }
       this.draw = function() {
