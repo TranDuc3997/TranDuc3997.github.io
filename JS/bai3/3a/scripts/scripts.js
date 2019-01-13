@@ -34,6 +34,22 @@ function drawLine(ctx, startX, startY, endX, endY,color){
     ctx.lineTo(endX,endY);
     ctx.stroke();
 }
+function computeLine(success,fail,centerX,radius){
+    var indexLine = [,];
+    if(success == fail){
+        indexLine[0] = centerX;
+        indexLine[1] = centerX + radius / 2;
+    }
+    else if (success < fail) {
+        indexLine[0] = centerX + radius *  (success/0.5);
+        indexLine[1] = centerX - radius * (success/0.5);
+    }
+    else {
+        indexLine[0] = centerX - (radius /2) * success;
+        indexLine[1] = centerX + radius * success;
+    }
+    return indexLine;
+}
   var Piechart = function (options) {
       this.options = options;
       var param = options.param;
@@ -74,14 +90,17 @@ function drawLine(ctx, startX, startY, endX, endY,color){
         ctx.fillText(title, 20, 800);
         ctx.stroke();
     }
+    var valueLine = computeLine(myrate.success,myrate.fail,param.centerX,param.radius);
     this.drawLineSuccess = function() {
-        var startx = param.centerX + param.radius/2;
-        drawLine(ctx,startx,param.centerX,startx,param.centerY,color.botSuccess);
+        var startSuccess =  valueLine[0];
+        drawLine(ctx,startSuccess,param.centerX,startSuccess,param.centerY,color.botSuccess);
         // drawLine(ctx,0,150,100,250,color.botSuccess);
     }
 
     this.drawLineFail = function() {
-        drawLine(ctx,param.centerX + param.radius/2,100,550-param.centerX,param.centerY-120,color.botFail);
+        var startFail = valueLine[1];
+        console.log();
+        drawLine(ctx,startFail,param.centerX,startFail,param.centerY-120,color.botFail);
     }
 
     this.drawText = function() {
