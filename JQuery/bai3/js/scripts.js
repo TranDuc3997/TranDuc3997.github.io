@@ -1,23 +1,25 @@
-var rotation = [1080,-720,-360,360,720,1080];
-$(document).ready(function() {
-});
+var rotation = [1080,-720,-360,360,720,1080]; // value roatation
 var id = 1;
+// create image with image random from 1 to 5
 function createLeaves(id) {
   idleaves = generateRandomNumber(1,5);
   var img =  $('<img />', {
             id: 'leaves-'+ id +'-js',
-            class: 'leaves--hidden',
+            class: 'leaves--hidden-js',
             src: 'images/leaves'+ idleaves +'.png',
             alt: 'leaves1'
             }).appendTo('.container');
     return img;
 }
+// Function create random from min to max
 function generateRandomNumber(min , max) {
     return Math.floor(Math.random() * (max-min) + min );
 } 
+// function remove leaves while leaves Y over height parent
 function removeLeaves (leaves) {
     $(leaves).remove();
 }
+// Set animate leave drop with libary TweenMax
 setInterval(function(){
     var leaves = createLeaves(id++);
     var time = generateRandomNumber(5,15);
@@ -25,7 +27,6 @@ setInterval(function(){
     var x_start = generateRandomNumber(-maxWidth,maxWidth) * 10;
     var x_end = generateRandomNumber(-maxWidth,maxWidth) * 10;
     var y_end = 620;
-    var rotaX = rotation[generateRandomNumber(0,5)];
    TweenMax.fromTo($(leaves), time, {
        x: x_start,
        y: 0
@@ -34,7 +35,7 @@ setInterval(function(){
        y: y_end,
        rotationX:rotation[generateRandomNumber(0,5)],
        rotationY:rotation[generateRandomNumber(0,5)],
-       onComplete: function () {
+       onComplete: function () { // While complete animate
         removeLeaves(leaves);
        }
     });
