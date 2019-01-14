@@ -15,27 +15,20 @@ body {
   float: left;
   width: 25%;
   height: 65%;
-  margin-left: 20px;
   margin-top: 20px;
 }
 .block__left {
   float: left;
-  width: 50%;
-  margin-left: 5px;
-  margin-top: 20px
+  width: 40%;
+  margin: 20px 26px 0px 5px;
 }
 .block__picture {
   float: left;
-  width: 40%;
-  padding-right: 20px;
-}
-.block__picture img {
-  width: 200px;
-  height: 100px;
 }
 .block__info {
   float: left;
-  width: 55%;
+  width: 61%;
+  padding-left: 27px;
 }
 .title__main {
   margin-bottom: 50px;
@@ -48,6 +41,7 @@ body {
   margin-block-end: 0em;
 }
 .block__left__bottom {
+  clear: left;
   margin-left: 10px;
 }
 .block__left__bottom__more {
@@ -98,7 +92,7 @@ body {
 }
 
 .block__right__content {
-  margin-left: 20px;
+  margin-left: 35px;
 }
 .block__right__content--modify {
   margin-bottom: 0px;

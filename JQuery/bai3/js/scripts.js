@@ -5,7 +5,7 @@ function createLeaves(id) {
   idleaves = generateRandomNumber(1,5);
   var img =  $('<img />', {
             id: 'leaves-'+ id +'-js',
-            class: 'leaves--hidden-js',
+            // class: 'leaves--hidden-js',
             src: 'images/leaves'+ idleaves +'.png',
             alt: 'leaves1'
             }).appendTo('.container');
@@ -23,10 +23,10 @@ function removeLeaves (leaves) {
 setInterval(function(){
     var leaves = createLeaves(id++);
     var time = generateRandomNumber(5,15);
-    var maxWidth =Math.floor(($(document).width()/2) / 10);
-    var x_start = generateRandomNumber(-maxWidth,maxWidth) * 10;
-    var x_end = generateRandomNumber(-maxWidth,maxWidth) * 10;
-    var y_end = 620;
+    var maxWidth = $(document).width();
+    var x_start = generateRandomNumber(0,maxWidth);
+    var x_end = generateRandomNumber(0,maxWidth);
+    var y_end = 600;
    TweenMax.fromTo($(leaves), time, {
        x: x_start,
        y: 0

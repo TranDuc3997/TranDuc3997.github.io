@@ -1,10 +1,12 @@
 .container {
+  width: 1200px;
+  height: 600px;
   position: relative;
   overflow: hidden;
 }
-.img--position {
-  float: right;
-}
-.leaves--hidden {
+img {
   position: absolute;
+}
+.img--position {
+  right: 0;
 }
