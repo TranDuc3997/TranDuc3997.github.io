@@ -1,4 +1,6 @@
 var table,iMonth,iYear;
+var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
 checkAcount();
 function checkAcount(){
   checkUser();
@@ -37,6 +39,9 @@ function validateEmail(email) {
   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
+/**
+ * Initialization value Calendar
+ */
 function initCalendar() {
   var calendar = document.getElementById("calendar");
   calendar.innerHTML = " ";
@@ -44,10 +49,8 @@ function initCalendar() {
   var mselect = document.createElement("SELECT");
   var yselect = document.createElement("SELECT");
   var tr = document.createElement("TR");
-  table.setAttribute("id","table");
-  var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-  var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
-  tr.setAttribute("id","nav");
+  table.setAttribute("id","table-js");
+  tr.setAttribute("id","nav-js");
   iMonth = 0;
   iYear = 1950;
   table.appendChild(tr);
@@ -91,12 +94,12 @@ function initCalendar() {
     tr.appendChild(th);
   }
   var tr = document.createElement("TR");
-  tr.setAttribute("id","head");
+  tr.setAttribute("id","head-js");
   table.appendChild(tr);
   for(var  j = 0 ; j < 7 ; j++ ){
     var th = document.createElement("TH");
     th.innerHTML = listDate[j];
-    th.setAttribute("id","head"+j);
+    th.setAttribute("id","head-js"+j);
     tr.appendChild(th);
   }
   iMonth = mselect.options[mselect.selectedIndex].value;
@@ -104,6 +107,10 @@ function initCalendar() {
   createCalendar(table);
   calendar.appendChild(table);
 }
+/**
+ * Create days in Month Calendar
+ * @param {} table 
+ */
 function createCalendar(table) {
   var count = 1;
   var date = datesInMonth();
@@ -131,17 +138,33 @@ function createCalendar(table) {
   }  
   calendar.appendChild(table);
 }
+/**
+ * Get value dates in month
+ */
 function datesInMonth() {
-  return 32 - new Date(iYear, iMonth, 32).getDate();
+  return 32 - new Date(iYear, iMonth, 32).getDate();// return number of days in the month
 }
+/**
+ * Get value day in week
+ * @param {value day selected} idate 
+ */
 function daysInWeek(idate) {
   return new Date(iYear, iMonth,idate).getDay();
 }
+/**
+ * Return selected date value
+ * @param {Selected date value} idate 
+ */
 function addDay(idate){
-  var text = document.getElementById("value");
+  var text = document.getElementById("value-js");
   text.value = idate.padStart(2, '0') + "/" + (parseInt(iMonth)+1+"").padStart(2,'0') + "/" + iYear;
 }
-function createSelectMonth(th,select,arrMonth){
+/**
+ * 
+ * @param {Index Element} th 
+ * @param {*} select 
+ */
+function createSelectMonth(th,select){
   var nowMonth = new Date().getMonth;
   select.setAttribute("onchange","selectedMonth(event)")
   while(iMonth < 12){
@@ -152,10 +175,15 @@ function createSelectMonth(th,select,arrMonth){
     month.innerHTML = arrMonth[iMonth++];
     select.appendChild(month);
   }
-  select.setAttribute("id","months")
+  select.setAttribute("id","months-js")
   th.appendChild(select);
   return th;
 }
+/**
+ * 
+ * @param {*} th 
+ * @param {*} select 
+ */
 function createSelectYear(th,select){
   var nowYear = new Date().getFullYear();
   select.setAttribute("onchange","selectedYear(event)")
@@ -166,32 +194,55 @@ function createSelectYear(th,select){
     year.innerHTML = iYear++;
     select.appendChild(year);
   }
-  select.setAttribute("id","years");
+  select.setAttribute("id","years-js");
   th.appendChild(select);
   return th;
 }
+/**
+ * Create new Calendar with value selected 
+ * @param {*} table 
+ */
 function newCalendar (table){
   removeChildTable(table);
   createCalendar(table);
 }
+
+/**
+ * Remove day in calender
+ * @param {Elenment table} table 
+ */
 function removeChildTable(table) {
   for(var irow = 0 ; irow < 6 ; irow++)
     table.removeChild(table.childNodes[2]);
 }
+/**
+ * 
+ * @param {value Month Selected} evt 
+ */
 function selectedMonth(evt){
   iMonth = evt.target.value;
   newCalendar(table);
 }
+/**
+ * 
+ * @param {value Year selected} evt 
+ */
 function selectedYear(evt) {
   iYear = evt.target.value
   newCalendar(table);
 }
+/**
+ * Change value Year
+ */
 function changeYear(){
-  var  select = document.getElementById("years");
+  var  select = document.getElementById("years-js");
   select.selectedIndex = iYear - 1950;
 }
+/**
+ * Change value Month
+ */
 function changeMonth() {
-  var  select = document.getElementById("months");
+  var  select = document.getElementById("months-js");
   if(iMonth > 11) {
     iMonth -= 12;
     ++iYear
@@ -204,21 +255,34 @@ function changeMonth() {
   }
   select.selectedIndex = iMonth;
 }
+/**
+ * reduce value Year
+ */
 function backYear() {
   iYear--;
   changeYear();
   newCalendar(table);
 }
+/**
+ * reduce value Month
+ */
 function backMonth() {
   iMonth--;
   changeMonth();
   newCalendar(table);
 }
+/**
+ * increase value Month
+ */
 function forwardMonth() {
   iMonth++;
   changeMonth();
   newCalendar(table);
 }
+/**
+ * 
+  increase value Year
+ */
 function forwardYear() {
   iYear++;
   changeYear();

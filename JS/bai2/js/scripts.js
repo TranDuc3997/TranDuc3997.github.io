@@ -1,4 +1,4 @@
-var table,iMonth,iYear;
+var table,iMonth,iYear,check = true;
 var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
 /**
@@ -7,67 +7,73 @@ var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
 function initCalendar() {
   var calendar = document.getElementById("calendar");
   calendar.innerHTML = " ";
-  table = document.createElement("TABLE");
-  var mselect = document.createElement("SELECT");
-  var yselect = document.createElement("SELECT");
-  var tr = document.createElement("TR");
-  table.setAttribute("id","table-js");
-  tr.setAttribute("id","nav-js");
-  iMonth = 0;
-  iYear = 1950;
-  table.appendChild(tr);
-  for(var i = 0 ; i < 6 ; i++){
-    var th = document.createElement("TH");
-    switch(i){
-      case 0 :{
-        th.setAttribute("id","back__Year-js");
-        th.setAttribute("onclick","backYear()");
-        th.innerHTML = "&#8647;";
-        break;
+    if(check){
+    check = false;
+    table = document.createElement("TABLE");
+    var mselect = document.createElement("SELECT");
+    var yselect = document.createElement("SELECT");
+    var tr = document.createElement("TR");
+    table.setAttribute("id","table-js");
+    tr.setAttribute("id","nav-js");
+    iMonth = 0;
+    iYear = 1950;
+    table.appendChild(tr);
+    for(var i = 0 ; i < 6 ; i++){
+      var th = document.createElement("TH");
+      switch(i){
+        case 0 :{
+          th.setAttribute("id","back__Year-js");
+          th.setAttribute("onclick","backYear()");
+          th.innerHTML = "&#8647;";
+          break;
+        }
+        case 1: {
+          th.setAttribute("id","back__Month-js");
+          th.setAttribute("onclick","backMonth()");
+          th.innerHTML = "&#8592;";
+          break;
+        }
+        case 2: {
+          th.setAttribute("colspan","2");
+          th = createSelectMonth(th,mselect,arrMonth);
+          break;
+        }
+        case 3: {
+          th = createSelectYear(th,yselect);
+          break;
+        }
+        case 4: {
+          th.setAttribute("id","forward__Month-js");
+          th.setAttribute("onclick","forwardMonth()");
+          th.innerHTML = "&#8594;";
+          break;
+        }
+        case 5: {
+          th.setAttribute("id","forward__Year-js");
+          th.setAttribute("onclick","forwardYear()");
+          th.innerHTML = "&#8649;";
+          break;
+        }
       }
-      case 1: {
-        th.setAttribute("id","back__Month-js");
-        th.setAttribute("onclick","backMonth()");
-        th.innerHTML = "&#8592;";
-        break;
-      }
-      case 2: {
-        th.setAttribute("colspan","2");
-        th = createSelectMonth(th,mselect,arrMonth);
-        break;
-      }
-      case 3: {
-        th = createSelectYear(th,yselect);
-        break;
-      }
-      case 4: {
-        th.setAttribute("id","forward__Month-js");
-        th.setAttribute("onclick","forwardMonth()");
-        th.innerHTML = "&#8594;";
-        break;
-      }
-      case 5: {
-        th.setAttribute("id","forward__Year-js");
-        th.setAttribute("onclick","forwardYear()");
-        th.innerHTML = "&#8649;";
-        break;
-      }
+      tr.appendChild(th);
     }
-    tr.appendChild(th);
+    var tr = document.createElement("TR");
+    tr.setAttribute("id","head-js");
+    table.appendChild(tr);
+    for(var  j = 0 ; j < 7 ; j++ ){
+      var th = document.createElement("TH");
+      th.innerHTML = listDate[j];
+      th.setAttribute("id","head-js"+j);
+      tr.appendChild(th);
+    }
+    iMonth = mselect.options[mselect.selectedIndex].value;
+    iYear = yselect.options[yselect.selectedIndex].value;
+    createCalendar(table);
+    calendar.appendChild(table);
   }
-  var tr = document.createElement("TR");
-  tr.setAttribute("id","head-js");
-  table.appendChild(tr);
-  for(var  j = 0 ; j < 7 ; j++ ){
-    var th = document.createElement("TH");
-    th.innerHTML = listDate[j];
-    th.setAttribute("id","head-js"+j);
-    tr.appendChild(th);
+  else {
+    check = true;
   }
-  iMonth = mselect.options[mselect.selectedIndex].value;
-  iYear = yselect.options[yselect.selectedIndex].value;
-  createCalendar(table);
-  calendar.appendChild(table);
 }
 /**
  * Create days in Month Calendar
