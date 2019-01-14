@@ -19,12 +19,12 @@ function drawPieSlice(ctx,centerX,centerY, radius, startAngle, endAngle, color )
 }
 /**
  * 
- * @param {*} ctx 
- * @param {*} startX 
- * @param {*} startY 
- * @param {*} endX 
- * @param {*} endY 
- * @param {*} color 
+ * @param {reference to the drawing context} ctx 
+ * @param {the X coordinate of the line starting point} startX 
+ * @param {the Y coordinate of the line starting point} startY 
+ * @param {the X coordinate of the line end point} endX 
+ * @param {the Y coordinate of the line end point} endY 
+ * @param {the color of the line} color 
  */
 function drawLine(ctx, startX, startY, endX, endY,color){
     ctx.strokeStyle = color;
@@ -83,7 +83,7 @@ function computeLine(success,fail,centerX,radius){
           fix.fixX = -fix.fixX;
       }
       ctx.scale(1, fix.scale);
-  
+      //draw char with index i
       this.drawChart = function(i) {
           if (i < fix.slice_Height) {
               drawPieSlice(ctx,param.centerX,param.centerY - i,param.radius,0,Math.PI * 2 * myrate.success, color.botSuccess);
@@ -94,6 +94,7 @@ function computeLine(success,fail,centerX,radius){
             drawPieSlice(ctx,param.centerX + fix.fixX,param.centerY + fix.fixY - i,param.radius,Math.PI * 2 * myrate.success,0,color.topFail);
           }
       }
+      //draw title
       this.drawTitle = function() {
         ctx.restore();
         ctx.beginPath();
@@ -103,18 +104,19 @@ function computeLine(success,fail,centerX,radius){
         ctx.stroke();
     }
     var valueLine = computeLine(myrate.success,myrate.fail,param.centerX,param.radius);
+    // draw line success
     this.drawLineSuccess = function() {
         var startSuccess =  valueLine[0];
         drawLine(ctx,startSuccess,param.centerX,startSuccess,param.centerY,color.botSuccess);
         drawLine(ctx,startSuccess,param.centerX,valueLine[1],param.centerX ,color.botSuccess);
     }
-
+    // draw line fail
     this.drawLineFail = function() {
         var startFail = valueLine[2];
         drawLine(ctx,startFail,param.centerX,startFail,param.centerY - 120,color.botFail);
         drawLine(ctx,startFail,param.centerX,valueLine[3],param.centerX ,color.botFail);
     }
-
+    //draw text 
     this.drawText = function() {
         ctx.beginPath();
         ctx.font = "14px Arial";

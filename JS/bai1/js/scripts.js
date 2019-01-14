@@ -1,3 +1,4 @@
+// add Text input in list
 function addName() {
   var div = document.createElement("div");
   var node = document.createElement("P");
@@ -10,24 +11,25 @@ function addName() {
   var index = list.childNodes.length;
   button.setAttribute("onClick","removeName()")
   
-  serial.setAttribute("class","number");
+  serial.setAttribute("class","number-js");
   serial.setAttribute("id",index);
   
   //check name
   if(checkName(name.value,list)){
-    button.setAttribute("class","button");
+    button.setAttribute("class","button-js");
     button.setAttribute("value",index);
     node.innerHTML = name.value;
     serial.innerHTML = index;
     div.appendChild(serial);
     div.appendChild(node);
     div.appendChild(button);
-    div.setAttribute("class","node");
+    div.setAttribute("class","node-js");
     div.setAttribute("id",index);
     list.appendChild(div);
   }
   name.value = "";
 }
+//check value of input
 function checkName(name,list){
   if(name.trim().length > 0){
     if(name.trim().length > 20){
@@ -42,6 +44,7 @@ function checkName(name,list){
     alert("Input is empty. Please add input.");
     return false;
   }
+//check exist in list
 function checkExist(name,list){
   for(var i = 0 ; i < list.children.length ; i++)
     if(list.children[i].children[1].innerHTML == name){
@@ -51,6 +54,7 @@ function checkExist(name,list){
     return true;
 }
 }
+// Del value selected in list
 function removeName(e){
   e = e || window.event;
   e = e.target || e.srcElement;
@@ -58,6 +62,7 @@ function removeName(e){
   items.parentNode.removeChild(items);
   resetSerial();
 }
+// Update serial after del index
 function resetSerial(){
   var list = document.getElementById("list");
   for(var i = 0 ; i < list.children.length ; i++)

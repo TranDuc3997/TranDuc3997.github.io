@@ -10,26 +10,26 @@ body {
  padding: 10px 10px 10px 10px;
 }
 
-.node {
+.node-js {
  height: 60px;
  background-color: #fff;
  margin: 10px 100px 10px 20px;
 }
 
-.node p {
+.node-js p {
   float: left;
   text-align: center;
   margin-left: 20px;
   margin-top: 20px;
 }
-.number {
+.number-js {
   border-radius: 50%;
   width: 20px;
   height: 20px;
   border: 4px solid #F8F8F8;
 }
 
-.button {
+.button-js {
   float: right;
   background-image: url(../images/del.png);
   margin-top: 15px;
