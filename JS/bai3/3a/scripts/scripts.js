@@ -35,10 +35,11 @@ function drawLine(ctx, startX, startY, endX, endY,color){
     ctx.stroke();
 }
 /**
- * Returns array with indexLine[0]: startX line vertical succes
- *                    indexLine[1]: startX line vertical fail
- *                    indexLine[2]: EndX line horizontal succes
- *                    indexLine[3]: EndX line horizontal fail
+ * Returns array with
+ * indexLine[0]: startX line vertical succes
+ * indexLine[1]: startX line vertical fail
+ * indexLine[2]: EndX line horizontal succes
+ * indexLine[3]: EndX line horizontal fail
  * @param {*} success 
  * @param {*} fail 
  * @param {*} centerX 
@@ -77,14 +78,9 @@ function computeLine(success,fail,centerX,radius){
       //tilte
       var title = options.title;
       var check = myrate.success >= myrate.fail ? true : false;
-      var lineSuccess = [300, 100, 200, 100];
-      var lineFail = [800, 100, 900, 100];
   
       if (!check) {
           fix.fixX = -fix.fixX;
-          var t = lineSuccess;
-          lineSuccess = lineFail;
-          lineFail = t;
       }
       ctx.scale(1, fix.scale);
   

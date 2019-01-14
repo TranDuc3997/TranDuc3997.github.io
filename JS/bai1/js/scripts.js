@@ -5,20 +5,20 @@ function addName() {
   var button = document.createElement("button");
 
   var list = document.getElementById("list");
-  var name = document.getElementById("name").value;
+  var name = document.getElementById("name");
 
   var index = list.childNodes.length;
   button.setAttribute("onClick","removeName()")
-  node.innerHTML = name;
-  serial.innerHTML = index;
   
   serial.setAttribute("class","number");
   serial.setAttribute("id",index);
   
   //check name
-  if(checkName(name,list)){
+  if(checkName(name.value,list)){
     button.setAttribute("class","button");
     button.setAttribute("value",index);
+    node.innerHTML = name.value;
+    serial.innerHTML = index;
     div.appendChild(serial);
     div.appendChild(node);
     div.appendChild(button);
@@ -26,7 +26,7 @@ function addName() {
     div.setAttribute("id",index);
     list.appendChild(div);
   }
-  name = "";
+  name.value = "";
 }
 function checkName(name,list){
   if(name.trim().length > 0){

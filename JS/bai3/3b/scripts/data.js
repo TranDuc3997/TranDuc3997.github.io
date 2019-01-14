@@ -1,46 +1,53 @@
-// window.onload = eventWindowLoaded;
-// function eventWindowLoaded() {
-//     Canvas();
-// }
-// function Canvas() {
-//     var data = {
-//         A: 2,
-//         B: 0.1,
-//         C: 3,
-//         D: 4,
-//         E: 4
-//     };
-//     var level = 4;
-//     var title = "BIỂU ĐỒ LỊCH SỬ LEVEL OF POSITION";
-//     var heightTitle = 100;
-//     var widthTitle = 120;
-//     var fontTitle = "30pt Arial";
-//     var colorTitle = '';
-//     var name = "TÊN DỰ ÁN";
-//     var tileOther = "LEVEL OF POSITION";
-//     var height = 500;
-//     var widthLevel = 120;
-//     var fontOther = "20pt Arial";
-//     var widthRow = 170;
-//     var widthCol = 70;
-//     var heightCol = 70;
-//     var c = [];
-//     var i = 0;
-//     var myBarchart = new Barchart(
-//             {
-//                 ctx,
-//                 param,
-//                 fix,
-//                 title: " BIỂU ĐỒ TỔNG QUAN KHUNG NĂNG LỰC",
-//                 canvas: canvas,
-//                 data: data,
-//                 colors: color
-//             }
-//     );
-//     for (var item in data) {
-//         var a = item;
-//         c[i] = a;
-//         i++;
-//     }
-//     myBarchart.draw();
-// }
+window.onload = eventWindowLoaded;
+function eventWindowLoaded() {
+    Canvas();
+}
+function Canvas() {
+    var data = [2,0.1,3,4,4];
+    var nameData = ["A","B","C","D","E"];
+    var param = {
+        level : 4,
+        startXLine :  100,
+        startYLine : 200,
+        lineWidth : 800,
+        endXLine : 900,
+        maxLineHeight : 500,
+        maxLineWidth : 700,
+        distance : 160,
+        widthCol : 80,
+        IndexCol : 100 
+    }
+    var title = {
+        content : "BIỂU ĐỒ LỊCH SỬ LEVEL OF POSITION",
+        height : 100,
+        width : 700,
+        font : "50px Arial",
+        fontData :"30px Arial",
+        name : "TÊN DỰ ÁN",
+    }
+    var noteText = {
+        content : "LEVEL OF POSITION",
+        font : "20px Arial"
+    } 
+    var color = {
+        title : "#000000",
+        name : "#B3B3B3",
+        col : "#3366CC"
+    }
+    var canvas = document.getElementById('myCanvas');
+    canvas.width = 1200;
+    canvas.height = 700;
+    var ctx = canvas.getContext("2d");
+    var myBarchart = new Barchart({
+                ctx,
+                param,
+                nameData,
+                title,
+                noteText,
+                canvas: canvas,
+                data: data,
+                color: color
+            }
+    );
+    myBarchart.draw();
+}

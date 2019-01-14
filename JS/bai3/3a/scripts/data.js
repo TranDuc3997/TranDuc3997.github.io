@@ -28,8 +28,7 @@ function Canvas() {
     canvas.width = 600;
     canvas.height = 600;
     var ctx = canvas.getContext("2d");
-    var myPiechart = new Piechart(
-            {
+    var myPiechart = new Piechart({
                 ctx,
                 param,
                 fix,
