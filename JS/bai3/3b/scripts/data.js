@@ -7,12 +7,12 @@ function Canvas() {
     var nameData = ["A","B","C","D","E"];
     var param = {
         level : 4,
-        startXLine :  100,
+        startXLine :  200,
         startYLine : 200,
         lineWidth : 800,
         endXLine : 900,
         maxLineHeight : 500,
-        maxLineWidth : 700,
+        maxLineWidth : 800,
         distance : 160,
         widthCol : 80,
         IndexCol : 100 
@@ -27,7 +27,7 @@ function Canvas() {
     }
     var noteText = {
         content : "LEVEL OF POSITION",
-        font : "20px Arial"
+        font : "35px Arial"
     } 
     var color = {
         title : "#000000",
