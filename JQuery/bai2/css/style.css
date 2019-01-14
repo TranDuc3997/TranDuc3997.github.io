@@ -18,7 +18,10 @@
   margin-left: 50px;
   margin-top: 0;
 }
-
+.slideshow li {
+  display: none;
+  position: absolute;
+}
 .nav {
   clear: both;
   margin-left: 150px;
@@ -29,10 +32,6 @@
   float: left;
 }
 
-.items {
-  display: none;
-  position: absolute;
-}
 
 
 #nav_prev {

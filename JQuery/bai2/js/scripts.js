@@ -1,7 +1,8 @@
 timeauto = 5000;
 width = 648;
-index_prev = 1;
+index_prev = 1; // index before event click
 var interval;
+//** Main call function */
 $(document).ready(function() {
     initSilde();
     createAutoPlay();
@@ -18,11 +19,13 @@ $(document).ready(function() {
     });
     
 });
+//**Create auto play with time 5s */
 function createAutoPlay(){
    interval = setInterval(function(){
         changeIndexNext()
     }, timeauto);
 }
+// Change Index with envet button prev
 function changeIndexPrev() {
     if(index_prev == 1) {
         index_prev = 5;
@@ -30,13 +33,14 @@ function changeIndexPrev() {
     }
     else {
         for(var iItem = 5 ; iItem > 0 ; iItem--){
-            $("#item-"+ iItem).animate({
+            $("#item-"+ iItem + "-js").animate({
                 left: "+=" + width      
             });
         }
         setOpacity(--index_prev);
     }
 }
+// Change Index with envet button next
 function changeIndexNext() {
     if(index_prev == 5) {
         index_prev = 1;
@@ -44,31 +48,34 @@ function changeIndexNext() {
     }
     else {
         for(var iItem = 1 ; iItem < 6 ; iItem++){
-            $("#item-"+ iItem).animate({
+            $("#item-"+ iItem + "-js").animate({
                 left: "-=" + width 
             });
         }
         setOpacity(++index_prev);
     }
 }
+// Animate for event index from 5 to 1
 function moveIndex1(index) {
     for(var iItem = 1 ; iItem < 6 ; iItem++){
-        $("#item-"+ iItem).animate({
+        $("#item-"+ iItem + "-js").animate({
             left: "-=" + width * index
         });
     }
     setOpacity(index_prev);    
 }
+// Animate for event index from 1 to 5
 function moveIndex5(index) {
     for(var iItem = 5 ; iItem > 0 ; iItem--){
-        $("#item-"+ iItem).animate({
+        $("#item-"+ iItem + "-js").animate({
             left: "+=" + width * index
         });
     }
     setOpacity(index_prev);
 }
+// Event click navagation item
 function clickNav() {
-    $(".item_nav").click(function(){
+    $(".nav > li").click(function(){
         var sliderSplit = this.id.split('-');
         var index = sliderSplit[1];
         if(index < index_prev) {
@@ -84,18 +91,20 @@ function clickNav() {
     createAutoPlay();
     });
 }
+// Set opacity for navagtion item while selected or click
 function setOpacity(index){
-    $(".item_nav").css("opacity",1);
-    $("#item_nav-" + index).css("opacity",0.5);
+    $(".nav > li").css("opacity",1);
+    $("#item_nav-" + index + "-js").css("opacity",0.5);
 }
+// initialize SildeShow
 function initSilde() {
     for(var iItem = 2 ; iItem < 6 ; iItem++) {
-        $("#item-" + iItem).animate({
+        $("#item-" + iItem + "-js").animate({
              left : "+=" + width * (iItem-1)
         });
     }
     for(var iItem = 2 ; iItem < 6 ; iItem++)
-        $("#item-"+iItem).show(100);
-    $("#item-1").css("display","block");
+        $("#item-"+ iItem + "-js").show(100);
+    $("#item-1-js").css("display","block");
     setOpacity(1);
 }
