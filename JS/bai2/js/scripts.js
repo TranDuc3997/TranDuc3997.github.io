@@ -125,6 +125,7 @@ function daysInWeek(idate) {
  */
 function addDay(idate){
   var text = document.getElementById("value-js");
+  check = true;
   text.value = idate.padStart(2, '0') + "/" + (parseInt(iMonth)+1+"").padStart(2,'0') + "/" + iYear;
 }
 /**
