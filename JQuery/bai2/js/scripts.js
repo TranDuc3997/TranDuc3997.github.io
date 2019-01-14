@@ -32,12 +32,16 @@ function changeIndexPrev() {
         moveIndex1(4);
     }
     else {
+        disableClick();
         for(var iItem = 5 ; iItem > 0 ; iItem--){
             $("#item-"+ iItem + "-js").animate({
                 left: "+=" + width      
+            }).promise().done(function () {
+                enableClick();
             });
         }
         setOpacity(--index_prev);
+        enableClick();
     }
 }
 // Change Index with envet button next
@@ -47,9 +51,12 @@ function changeIndexNext() {
         moveIndex5(4);
     }
     else {
+        disableClick();
         for(var iItem = 1 ; iItem < 6 ; iItem++){
             $("#item-"+ iItem + "-js").animate({
                 left: "-=" + width 
+            }).promise().done(function () {
+                enableClick();
             });
         }
         setOpacity(++index_prev);
@@ -57,18 +64,24 @@ function changeIndexNext() {
 }
 // Animate for event index from 5 to 1
 function moveIndex1(index) {
+    disableClick();
     for(var iItem = 1 ; iItem < 6 ; iItem++){
         $("#item-"+ iItem + "-js").animate({
-            left: "-=" + width * index
+            left: "-=" + width * index,
+        }).promise().done(function () {
+            enableClick();
         });
     }
     setOpacity(index_prev);    
 }
 // Animate for event index from 1 to 5
 function moveIndex5(index) {
+    disableClick();
     for(var iItem = 5 ; iItem > 0 ; iItem--){
         $("#item-"+ iItem + "-js").animate({
-            left: "+=" + width * index
+            left: "+=" + width * index,
+        }).promise().done(function () {
+            enableClick();
         });
     }
     setOpacity(index_prev);
@@ -107,4 +120,11 @@ function initSilde() {
         $("#item-"+ iItem + "-js").show(100);
     $("#item-1-js").css("display","block");
     setOpacity(1);
+}
+//disable event click
+function disableClick() {
+    $(".nav > li").css("pointer-events","none");
+}
+function enableClick() {
+    $(".nav > li").css("pointer-events","auto");
 }
