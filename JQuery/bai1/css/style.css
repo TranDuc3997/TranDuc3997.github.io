@@ -22,7 +22,7 @@ body {
   width: 100%;
   padding-left: 10px;
 }
-.button {
+.button-js {
   margin-left: 60px;
   margin-top: 10px;
 }
@@ -34,7 +34,7 @@ body {
   background-color: white;
   padding: 10px 10px 10px 10px;
 }
-.close {
+.close-js {
   position: absolute;
   top: -15px;
   right: -25px;
