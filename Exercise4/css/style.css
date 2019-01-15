@@ -19,6 +19,7 @@ body {
 }
 
 .title {
+  font-family: 'Times New Roman', Times, serif;
   font-weight:bold;
   margin:0px 0px 0px 1px;
   line-height: 0.9375;
@@ -83,6 +84,7 @@ body {
 	padding-top: 4px;
 }
 .block__news {
+  font-family: 'Times New Roman', Times, serif;
   margin-top: 20px;
 }
 .article__horoscopes {
@@ -168,6 +170,7 @@ body {
   background-color:white;
   border:1px solid #595959;
 }
-.competion__info a {
+.competion__info p {
+  font-family: 'Times New Roman', Times, serif;
   color:#4d5d73;
 }
