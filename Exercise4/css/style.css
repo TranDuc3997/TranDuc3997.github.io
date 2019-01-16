@@ -113,9 +113,6 @@ body {
   line-height: 1.36;
   color: #595959;
 }
-.article__horoscopes .article__content .article__info {
-  margin-left: -10px;
-}
 .article__horoscopes .picture {
   height:85px;
 }

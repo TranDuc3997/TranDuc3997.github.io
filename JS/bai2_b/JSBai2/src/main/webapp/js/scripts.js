@@ -2,6 +2,11 @@ var table,iMonth,iYear,check = true;
 var arrMonth = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 var listDate = ["Sun","Mon","Tue","Web","Thu","Fri","Sat"];
 checkAcount();
+function refresh() {
+  var text = document.getElementsByTagName("SPAN");
+  for(var i = 0 ; i < 4 ; i++)
+    text[i].innerText = "";
+}
 function checkAcount(){
   checkUser();
   checkPass();
