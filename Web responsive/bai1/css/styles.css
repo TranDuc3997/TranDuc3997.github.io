@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+/*   
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  } */
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+  [class*="col-"] {
+    float: left;
+  }
+  
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+body {
+  min-width: 650px;
+  max-width: 1280px;
+  min-height: 1780px;
+  height: auto;
+  margin: 0 auto;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+.header {
+  position: relative;
+}
+#header__btn {
+  top: 2px;
+  right: 60px;
+  position: absolute;
+}
+.content {
+  width: 93.75%;
+  height: auto;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.content__head > img {
+  margin: 0;
+}
+.content__body {
+  width: 100%; 
+  position: relative;
+  background: url(../images/bg-inner.jpg) no-repeat center center;
+  background-size: cover;
+}
+.content__body__head {
+  background: rgba(185, 186, 184, 0.7);
+  text-align: center;
+  padding-bottom: 5%;
+  padding-top: 5%
+}
+.sticker {
+  margin-top: 30px;
+}
+.women {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin : 0px 27px 0px 20px;
+}
+.women__icon {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+.women__base {
+  margin: 10px auto;
+  background: #fee8d2;
+  border-radius: 5px;
+  width: 82%;
+  position: relative;
+  padding: 1%;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.women__base:before {
+  content: " ";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 10px;
+  left: -13px;
+  border-left: 15px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 15px solid #fee8d2;
+  border-top: 15px solid transparent;
+}
+.text > p > b > span {
+  display: inline-block;
+  background: #ffffff;
+  padding: 0 4px;
+}
+.icon-sound {
+  display: block;
+  width: 62px;
+}
+.icon-woman {
+  margin-right: 15px;
+}
+.icon-man {
+  margin-left: 15px;
+}
+.text {
+  font-size: 24px;
+  color: #474747;
+}
+.dummy {
+  color: #4190a0
+}
+
+.men {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin : 0px 20px 0px 27px
+}
+.men__base {
+  background: #e2f3f2;
+  border-radius: 5px;
+  width: 82%;
+  position: relative;
+  padding: 1%;
+  line-height: 1.6;
+  display: flex;
+  text-align: left;
+  align-items: center;
+  margin: 10px auto;
+}
+.men__base:before {
+  content: " ";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 10px;
+  right: -13px;
+  border-left: 0px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #e2f3f2;
+  border-top: 15px solid transparent;
+}
+.nav__chat {
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: 30px;
+}
+.nav__chat > .col-6 {
+  margin-top: 10px;
+}
+.--clear {
+  clear: left;
+}
+.nav__footer {
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__footer > img {
+  margin: 0;
+}
+.chat__right {
+  display: none;
+}
+
+@media only screen and (min-width:1280px) {
+  /* For PC: */
+  .content {
+    width: 68%;
+    margin-left: 16%;
+  }
+  .inner {
+    background : url(../images/bg-inner.jpg)no-repeat center center;
+  }
+  .women {
+    margin-left: 16%;
+  }
+  #women-1 {
+    width: 50%;
+  }
+  #women-2 {
+    width: 64.4%;
+  }
+  #women-1 > .women__base {
+    width: 83.7%;
+  }
+  #women-2 > .women__base {
+    width: 87.5%;
+  }
+  #men-1 {
+    width: 42.5%;
+    margin-left: 45%;
+  }
+  #men-1 > .men__base {
+    width: 81%;
+  }
+  #man__sad, #man__smile {
+    display: none;
+  }
+  .dummy > span {
+    display: none;
+  }
+  .text {
+    font-size: 16px;
+  }
+  .chat__left, .chat__right {
+    float: left;
+  }
+  .chat__left {
+    width: 50%;
+  }
+  .chat__left > .men > img {
+    display: none;
+  }
+  .chat__right {
+    display: block;
+  }
+  .content__body--modify {
+    width: 100%;
+    display: flex;
+    justify-content: center
+  }
+}

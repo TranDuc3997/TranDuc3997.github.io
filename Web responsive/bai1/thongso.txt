@@ -1,0 +1,9 @@
+inner pc 870
+inner sp 600
+women chat 1: 360px 430   = 50% 83,7%
+women chat 2: 490px  560 = 64.4%  87,5%
+women chat 3 :280px 350 = 40% 82,3%
+women chat 4 : 295px  34%
+========================================
+margin - right : 4%
+men chat 1 :300px 370 = 42.5%
