@@ -3,12 +3,6 @@
     margin: 0;
     padding: 0;
   }
-/*   
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  } */
   img {
     display: block;
     margin: 0 auto;
@@ -186,10 +180,15 @@ body {
 .nav__footer > img {
   margin: 0;
 }
+.nav__footer > picture {
+  margin-bottom: 10px;
+}
 .chat__right {
   display: none;
 }
-
+.footer {
+  display: none;
+}
 @media only screen and (min-width:1280px) {
   /* For PC: */
   .content {
@@ -208,11 +207,18 @@ body {
   #women-2 {
     width: 64.4%;
   }
+  #women-3 {
+    width: 80.5%;
+    margin-left: 20%;
+  }
   #women-1 > .women__base {
     width: 83.7%;
   }
   #women-2 > .women__base {
     width: 87.5%;
+  }
+  #women-3 > .women__base {
+    width: 82%;
   }
   #men-1 {
     width: 42.5%;
@@ -220,6 +226,9 @@ body {
   }
   #men-1 > .men__base {
     width: 81%;
+  }
+  .nav__chat {
+    margin-bottom: -8px;
   }
   #man__sad, #man__smile {
     display: none;
@@ -231,20 +240,69 @@ body {
     font-size: 16px;
   }
   .chat__left, .chat__right {
-    float: left;
-  }
-  .chat__left {
     width: 50%;
+    float: left;
   }
   .chat__left > .men > img {
     display: none;
   }
+  .chat__left > .men {
+    margin-right: 0px;
+    margin-left: 22%;
+  }
+  .chat__right > .men {
+    margin-left: 0px;
+    margin-right: 10%;
+   }
   .chat__right {
     display: block;
   }
+  .chat__left > .men {
+    width: 73%;
+  }
+  .chat__left > .men > .men__base {
+    width: 96.2%;
+  }
+  .chat__right > .men {
+    margin-left: 10px;
+    margin-right: 25px;
+  }
+  .chat__right > .men > .men__base {
+    width: 84%;
+    margin-left: 0px;
+  }
+  .chat__right > .men > .icon-man {
+    margin-left: 3%;
+  }
+  .chat__right > .women {
+    margin-left: 15%;
+    margin-right: 0;
+  }
+  .chat__right > .women > .women__base {
+    width: 75%;
+    margin: 0;
+  } 
   .content__body--modify {
     width: 100%;
     display: flex;
     justify-content: center
+  }
+  .men__base--large {
+    flex-wrap: wrap;
+  }
+  .--border {
+    padding-top: 10px;
+    border-top: 2px solid #95ded9;
+  }
+  .--edit {
+    margin-left: -65px;
+  }
+  .nav__footer {
+    position: absolute;
+  }
+  .footer {
+    display: block;
+    width: 100%;
+    margin-top: 8%;
   }
 }

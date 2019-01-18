@@ -6,4 +6,7 @@ women chat 3 :280px 350 = 40% 82,3%
 women chat 4 : 295px  34%
 ========================================
 margin - right : 4%
+435px => 85%
+margin -- left : 17%
 men chat 1 :300px 370 = 42.5%
+medium men  82.5%
