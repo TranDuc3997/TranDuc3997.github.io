@@ -117,16 +117,25 @@ body {
   color: #4190a0
 }
 .checkbox {
+  display: flex;
+  flex-wrap: wrap;
   position: absolute;
   right: 0;
   top: 0;
-} 
-ul {
-  list-style: none;
+  margin-right: -3%;
 }
-li ::after {
-  content: url("../images/img_check.png");
+.checkEN, .checkJP {
+  margin-top: 16%;
 }
+.checkEN {
+  width: 100%;
+  color: #4093a3;
+}
+.checkJP {
+  width: 100%;
+  color: #474747
+}
+
 .men {
   display: flex;
   flex-wrap: wrap-reverse;
@@ -235,9 +244,7 @@ li ::after {
   .nav__chat {
     margin-bottom: -8px;
   }
-  #man__sad, #man__smile {
-    display: none;
-  }
+
   .dummy > span {
     display: none;
   }
@@ -291,6 +298,20 @@ li ::after {
     width: 100%;
     display: flex;
     justify-content: center
+  }
+  .content__body__head {
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .checkbox {
+    margin: 3%;
+    display: block;
+  }
+  .checkEN {
+    margin-left: 25;
+  }
+  .man {
+    display: none;
   }
   .men__base--large {
     flex-wrap: wrap;
