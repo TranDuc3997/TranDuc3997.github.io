@@ -15,10 +15,12 @@
   background: #666666; 
 }
 .header-text {
-  margin:160px 430px;
+  margin: 12.5% 33.5%;
 }
 .header__caution {
   float: right;
+  margin-right: 5%;
+  margin-bottom: 1%;
 }
 .header > img {
   display: flex;
