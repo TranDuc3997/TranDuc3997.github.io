@@ -17,11 +17,15 @@
 .header-text {
   margin:160px 430px;
 }
+.header__caution {
+  float: right;
+}
 .header > img {
   display: flex;
   width: 100%;
 }
 .header__body__content {
+  clear: right;
   background-color: #333333;
   text-align: center;
   padding: 40px 0px;
