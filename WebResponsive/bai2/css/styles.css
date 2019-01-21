@@ -90,7 +90,7 @@ p {
 .--margin-bootom {
   margin-bottom: 10%;
 }
-@media only screen and (max-width:640px) {
+@media only screen and (max-width:1279px) {
   .row {
     width: 100%;
   }
