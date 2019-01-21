@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .container {
   min-width: 320px;
   max-width: 1280px;
@@ -16,6 +17,7 @@
 }
 .header-text {
   margin: 12.5% 33.5%;
+  width: 33%;
 }
 .header__caution {
   float: right;
@@ -31,6 +33,9 @@
   background-color: #333333;
   text-align: center;
   padding: 40px 0px;
+}
+.header__body__content  img{
+  width: 70%;
 }
 .content {
   background: #eeeeee;
@@ -74,6 +79,7 @@ p {
   display: none;
   position: absolute;
   top: 95%;
+  width: 100%;
 }
 .footer {
   position: relative;
@@ -84,8 +90,11 @@ p {
 .--margin-bootom {
   margin-bottom: 10%;
 }
-@media only screen and (max-width:320px) {
+@media only screen and (max-width:640px) {
   .row {
+    width: 100%;
+  }
+  .row img {
     width: 100%;
   }
 }
