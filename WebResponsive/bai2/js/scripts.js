@@ -1,4 +1,3 @@
-var flag = false;
 $(window).scroll(function() {
 if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height() - 1) {
     $(".blood-js").show();
@@ -8,7 +7,7 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
     $(".header__body__content").css("background-color","#330000").css("color","#867d7d").attr("src","images/header__banner--info-hornor.png");
     $("h3").css("border-color","#330000");
     changeImage(true);
-    $( document).css("pointer-events","none");
+    $("html, body").css("overflow","hidden");//disable scroll
     $("html, body").animate({
         scrollTop: "0px",
     }, 5000);
@@ -19,9 +18,9 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
         $(".content").removeAttr("style");
         $(".info").removeAttr("style");
         $(".header__body__content").removeAttr("style");
+        $("html, body").css("overflow","auto");//enable scroll
     },6000);
 }
-
 });
  // Change Image follow type
  function changeImage (typeImage) {

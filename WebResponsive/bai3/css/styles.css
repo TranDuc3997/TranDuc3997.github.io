@@ -11,6 +11,34 @@ body {
 .container {
   width: 100%;
 }
-img {
+.content a{
+  position: absolute;
+}
+div {
   width: 100%;
+}
+.content__btn__1 , .content__btn__2, .content__btn__face{
+  position: relative;
+}
+.content__btn__1 a {
+  top: 14%;
+}
+#qr-2 {
+ left: 50.8%; 
+}
+#qr-1 {
+  left: 12.6%;
+}
+.content__btn__2 a {
+  bottom: 11%;
+}
+#qr-3 {
+  left: 24%;
+}
+#qr-4 {
+  right: 23.5%;
+}
+#qr-5 {
+  top: 14%;
+  left: 29.2%;
 }
