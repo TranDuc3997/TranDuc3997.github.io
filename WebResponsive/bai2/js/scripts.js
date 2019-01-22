@@ -9,7 +9,7 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
     changeImage(true);
     $("html, body").css("overflow","hidden");//disable scroll
     $("html, body").animate({
-        scrollTop: "0px",
+        scrollTop: 0,
     }, 5000);
     setTimeout(function(){
         changeImage(false);
@@ -25,14 +25,12 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
  // Change Image follow type
  function changeImage (typeImage) {
     if(typeImage)
-        $(".row").each(function(index) {
-            iImage = index + 1;
-           $(this).children("img").attr("src","images/content__img-"+ iImage +"_hornor.jpg");
+        $(".row").each(function() {
+           $(this).children("img").attr("src", $(this).children("img").attr("src").replace(".jpg","_hornor.jpg"));
     });
     else {
-        $(".row").each(function(index) {
-            iImage = index + 1;
-           $(this).children("img").attr("src","images/content__img-"+ iImage +".jpg");
+        $(".row").each(function() {
+            $(this).children("img").attr("src", $(this).children("img").attr("src").replace("_hornor.jpg",".jpg"));
         });
     }
  }
