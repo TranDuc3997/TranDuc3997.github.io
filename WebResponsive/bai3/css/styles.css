@@ -42,3 +42,22 @@ div {
   top: 14%;
   left: 29.2%;
 }
+@media only screen and (max-width:640px) {
+  #qr-1 {
+    left: 6%;
+  }
+  .content__btn__2 a {
+    left: 9%;
+  }
+  #qr-4 {
+    bottom: 4.7%;
+  }
+  #qr-3 {
+    top: 36.5%;
+    left: 9%;
+  }
+  #qr-5 {
+    top: 12%;
+    left: 6%;
+  }
+}
