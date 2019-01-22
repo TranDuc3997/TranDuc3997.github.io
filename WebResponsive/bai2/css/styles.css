@@ -8,6 +8,7 @@
   min-width: 320px;
   max-width: 1280px;
   margin: 0 auto;
+  position: relative;
 }
 .header {
   width: 100%;
@@ -20,10 +21,12 @@
   width: 33%;
 }
 .header__caution {
+  width: 40%;
   float: right;
   margin-right: 5%;
   margin-bottom: 1%;
 }
+
 .header > img {
   display: flex;
   width: 100%;
@@ -78,9 +81,10 @@ p {
 .blood-js {
   display: none;
   position: absolute;
-  top: 95%;
+  bottom: 0;
   width: 100%;
 }
+
 .footer {
   position: relative;
 }
@@ -91,10 +95,18 @@ p {
   margin-bottom: 10%;
 }
 @media only screen and (max-width:1279px) {
+  p{
+    margin: 0;
+  }
   .row {
     width: 100%;
   }
   .row img {
     width: 100%;
+  }
+}
+@media only screen and (max-width:640px) {
+  p{
+    font-size: 0.8em;
   }
 }

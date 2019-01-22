@@ -25,12 +25,14 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
  // Change Image follow type
  function changeImage (typeImage) {
     if(typeImage)
-        $(".row").each(function() {
-           $(this).children("img").attr("src", $(this).children("img").attr("src").replace(".jpg","_hornor.jpg"));
+        $(".row").each(function(index) {
+           var pos = index +1;
+           $(this).children("img").attr("src","images/content__img-"+ pos +"_hornor.jpg");
     });
     else {
-        $(".row").each(function() {
-            $(this).children("img").attr("src", $(this).children("img").attr("src").replace("_hornor.jpg",".jpg"));
+        $(".row").each(function(index) {
+            var pos = index +1;
+            $(this).children("img").attr("src","images/content__img-"+ pos +".jpg");
         });
     }
  }
