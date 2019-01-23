@@ -298,7 +298,8 @@ body {
   .content__body--modify {
     width: 100%;
     display: flex;
-    justify-content: center
+    justify-content: center;
+    padding-bottom: 10%;
   }
   .content__body__head {
     padding-top: 1%;
