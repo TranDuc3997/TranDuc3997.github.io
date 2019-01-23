@@ -1,7 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  font-size: 0;
+}
+img {
+  display: block;
 }
 body {
   max-width: 1200px;
@@ -17,14 +19,53 @@ body {
 div {
   width: 100%;
 }
-.content__btn__1 , .content__btn__2, .content__btn__face{
+.text {
+  position: absolute;
+  list-style: none;
+}
+.content__btn__1 , .content__btn__2, .content__btn__face, .content__text__1, .content__text__2, .content__text__3 {
   position: relative;
+}
+.content__text__1 > .text {
+  width: 31.25%;
+  bottom: 7%;
+  left: 35%;
+  color: #4d6eb1;
+  font-weight: bold;
+}
+.content__text__2 > .text {
+  width: 52%;
+  bottom: 5%;
+  left: 24%;
+  color: #21498f;
+}
+.content__text__1 > .text, .content__text__2 > .text {
+  text-align: center;
+}
+.content__text__3 > .text {
+  font-size: 14px;
+  width: 17%;
+  top: 30%;
+  left: 18%;
+}
+.content__text__3 > .--postision__case2 {
+  left: 53%;
+  width: 14%;
+}
+.content__text__3 > .--postision__case3 {
+  top: 71%;
+  width: 19%;
+}
+.content__text__3 > .--postision__case4 {
+  top: 71%;
+  left: 53%;
+  width: 21.5%;
 }
 .content__btn__1 a {
   top: 14%;
 }
 #qr-2 {
- left: 50.8%; 
+  left: 50.8%; 
 }
 #qr-1 {
   left: 12.6%;
@@ -59,5 +100,9 @@ div {
   #qr-5 {
     top: 12%;
     left: 6%;
+  }
+  .content__text__1 > .text, .content__text__2 > .text {
+    width: 80%;
+    left: 10%;
   }
 }

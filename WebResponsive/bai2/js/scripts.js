@@ -5,7 +5,7 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
     $(".row").children("p").css("color","#ffffff");
     $(".content").css("background-color","#000000").css("color","#840000");
     $(".info").css("background-color","#330000").css("color","#850000");
-    $(".header__body__content").css("background-color","#330000").css("color","#867d7d").attr("src","images/header__banner--info-hornor.png");
+    $(".header__body__content").css("background-color","#330000").css("color","#867d7d").children("img").attr("src","images/header__content-hornor.png");
     $("h3").css("border-color","#330000");
     changeImage(true);
     $("html, body").css("overflow","hidden");//disable scroll
