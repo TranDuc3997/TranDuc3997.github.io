@@ -135,7 +135,6 @@ body {
   width: 100%;
   color: #474747
 }
-
 .men {
   display: flex;
   flex-wrap: wrap-reverse;
@@ -200,6 +199,9 @@ body {
 .chat__right {
   display: none;
 }
+.--hide {
+  opacity: 0;
+}
 .footer {
   display: none;
 }
@@ -223,7 +225,6 @@ body {
   }
   #women-3 {
     width: 80.5%;
-    margin-left: 20%;
   }
   #women-1 > .women__base {
     width: 83.7%;
@@ -259,11 +260,11 @@ body {
     display: none;
   }
   .chat__left > .men {
-    margin-right: 0px;
+    margin-right: 0;
     margin-left: 22%;
   }
   .chat__right > .men {
-    margin-left: 0px;
+    margin-left: 0;
     margin-right: 10%;
    }
   .chat__right {
@@ -321,7 +322,13 @@ body {
     border-top: 2px solid #95ded9;
   }
   .--edit {
-    margin-left: -65px;
+    margin-left: -18%;
+  }
+  .--hide {
+    display: none;
+  }
+  .--margin {
+    margin-left: 7.5%;
   }
   .nav__footer {
     position: absolute;
