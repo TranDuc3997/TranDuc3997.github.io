@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+body {
+  font-size: 21px;
+}
 .container {
   min-width: 320px;
   max-width: 1280px;
@@ -62,18 +64,16 @@
   border-top: 1px solid black;    
   padding: 20px 0px;
   text-align: center;
-  font-size: 24px;
   margin: 48px 45px 0px 45px;
 }
 p {
-  font-size: 21px;
-  margin: 20px 35px;
+  margin: 20px 40px;
   text-align: left;
   min-height: 210px
 }
 .info {
   min-height: 0px;
-  font-size: 16px;
+  font-size: 0.8em;
   background-color: #cccccc;
   padding: 20px;
   text-align: left;
@@ -106,7 +106,7 @@ p {
   }
 }
 @media only screen and (max-width:640px) {
-  p{
-    font-size: 0.8em;
+  body{
+    font-size: 16px;
   }
 }
