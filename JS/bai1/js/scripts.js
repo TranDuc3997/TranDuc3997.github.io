@@ -55,9 +55,9 @@ function checkExist(name,list){
 }
 }
 // Del value selected in list
-function removeName(e){
-  e = e || window.event;
-  e = e.target || e.srcElement;
+function removeName(event){
+  event = event || window.event;
+  event = event.target || event.srcElement;
   var items = document.getElementById(e.value);
   items.parentNode.removeChild(items);
   resetSerial();

@@ -2,7 +2,7 @@ $(window).scroll(function() {
 if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height() - 1) {
     $(".blood-js").show();//show blood
     // Change properties while scroll to boottom
-    $(".row").children("p").css("color","#ffffff");
+    $(".row").children("p").css("color","#850000");
     $(".content").css("background-color","#000000").css("color","#840000");
     $(".info").css("background-color","#330000").css("color","#850000");
     $(".header__body__content").css("background-color","#330000").css("color","#867d7d").children("img").attr("src","images/header__content-hornor.png");
@@ -20,7 +20,7 @@ if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height(
         $(".row").children("p").removeAttr("style");
         $(".content").removeAttr("style");
         $(".info").removeAttr("style");
-        $(".header__body__content").removeAttr("style");
+        $(".header__body__content").removeAttr("style").children("img").attr("src","images/header__content.png");
         $("html, body").css("overflow","auto");//enable scroll
     },7000);
 }
