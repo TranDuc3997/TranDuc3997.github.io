@@ -6,7 +6,7 @@ img {
   display: block;
 }
 body {
-  max-width: 1200px;
+  width: 1200px;
   height: auto;
   margin: 0 auto;
 }
@@ -84,8 +84,17 @@ div {
   left: 29.2%;
 }
 @media only screen and (max-width:640px) {
+  body {
+    max-width: 640px;
+  }
+  li {
+    display: inline;
+  }
   #qr-1 {
     left: 6%;
+  }
+  #qr-2 {
+    left: 51.8%;
   }
   .content__btn__2 a {
     left: 9%;
@@ -104,5 +113,25 @@ div {
   .content__text__1 > .text, .content__text__2 > .text {
     width: 80%;
     left: 10%;
+  }
+  .content__text__3 > .text {
+    font-size: 20px;
+    width: 37%;
+    top: 14%;
+    left: 18%;
+    font-weight: bold;
+  }
+  .content__text__3 > .--postision__case2 {
+    left: 47%;
+    width: 34%;
+    top: 39%;
+  }
+  .content__text__3 > .--postision__case3 {
+    top: 61%;
+    width: 38%;
+  }
+  .content__text__3 > .--postision__case4 {
+    top: 85%;
+    left: 47%;
   }
 }
