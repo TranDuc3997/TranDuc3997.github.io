@@ -1,3 +1,4 @@
+var e = window.event;
 // add Text input in list
 function addName() {
   var div = document.createElement("div");
@@ -9,8 +10,13 @@ function addName() {
   var name = document.getElementById("name");
 
   var index = list.childNodes.length;
-  button.setAttribute("onClick","removeName()")
-  
+  // button.setAttribute("onClick","removeName($event)");
+  button.onclick = function() {
+    var deleted = button.parentNode;
+    var parentDelete = deleted.parentNode;
+    parentDelete.removeChild(deleted);
+    resetSerial();
+}
   serial.setAttribute("class","number-js");
   serial.setAttribute("id",index);
   
@@ -19,8 +25,8 @@ function addName() {
     button.setAttribute("class","button-js");
     button.setAttribute("value",index);
     node.innerHTML = name.value;
-    serial.innerHTML = index;
-    div.appendChild(serial);
+    // serial.innerHTML = index;
+    // div.appendChild(serial);
     div.appendChild(node);
     div.appendChild(button);
     div.setAttribute("class","node-js");
@@ -52,19 +58,11 @@ function checkExist(name,list){
       return false;
     }
     return true;
-}
-}
-// Del value selected in list
-function removeName(event){
-  event = event || window.event;
-  event = event.target || event.srcElement;
-  var items = document.getElementById(e.value);
-  items.parentNode.removeChild(items);
-  resetSerial();
+  }
 }
 // Update serial after del index
-function resetSerial(){
-  var list = document.getElementById("list");
-  for(var i = 0 ; i < list.children.length ; i++)
-    list.children[i].children[0].innerHTML = i + 1;
-}
+// function resetSerial(){
+//   var list = document.getElementById("list");
+//   for(var i = 0 ; i < list.children.length ; i++)
+//     list.children[i].children[0].innerHTML = i + 1;
+// }
