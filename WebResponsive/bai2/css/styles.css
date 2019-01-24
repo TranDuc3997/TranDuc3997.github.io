@@ -94,6 +94,23 @@ p {
 .--margin-bootom {
   margin-bottom: 10%;
 }
+.--content__effect-js {
+  background-color: #000000;
+  color: #840000;
+}
+.--content__effect-js > .row p {
+  color: #850000;
+}
+.--content__effect-js > .row h3 {
+  border-color: #330000;
+}
+.--content__effect-js > .row > .info {
+  background-color: #330000;
+}
+.--header__body__content__effect-js {
+  background-color: #330000;
+  color: #867d7d;
+}
 @media only screen and (max-width:1279px) {
   p{
     margin: 0;

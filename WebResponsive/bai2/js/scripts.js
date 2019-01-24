@@ -2,27 +2,22 @@ $(window).scroll(function() {
 if(Math.floor($(window).scrollTop() + $(window).height()) >= $(document).height() - 1) {
     $(".blood-js").show();//show blood
     // Change properties while scroll to boottom
-    $(".row").children("p").css("color","#850000");
-    $(".content").css("background-color","#000000").css("color","#840000");
-    $(".info").css("background-color","#330000").css("color","#850000");
-    $(".header__body__content").css("background-color","#330000").css("color","#867d7d").children("img").attr("src","images/header__content-hornor.png");
-    $("h3").css("border-color","#330000");
+    $(".content").addClass("--content__effect-js");
+    $(".header__body__content").addClass("--header__body__content__effect-js").children("img").attr("src","images/header__content-hornor.png");
     changeImage(true);
     $("html, body").css("overflow","hidden");//disable scroll
     //Auto scroll to Top while scroll end
     $("html, body").animate({
         scrollTop: 0,
-    },5000);
-    //Return properties original
-    setTimeout(function(){
-        changeImage(false);
-        $(".blood-js").hide();
-        $(".row").children("p").removeAttr("style");
-        $(".content").removeAttr("style");
-        $(".info").removeAttr("style");
-        $(".header__body__content").removeAttr("style").children("img").attr("src","images/header__content.png");
-        $("html, body").css("overflow","auto");//enable scroll
-    },7000);
+    },5000,function(){
+        setTimeout(function(){
+            changeImage(false);
+            $(".blood-js").hide();
+            $(".content").removeClass("--content__effect-js");
+            $(".header__body__content").removeClass("--header__body__content__effect-js").children("img").attr("src","images/header__content.png");
+            $("html, body").css("overflow","auto");//enable scroll
+        },1000);//Return properties original
+    });
 }
 });
  /**
