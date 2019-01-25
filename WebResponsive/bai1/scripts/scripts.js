@@ -13,4 +13,36 @@ $(document).ready(function() {
             $(".text").children(".dummy").css("opacity","0");
         }
     });
+    $("#man__smile").click(function(){
+        if($(this).attr("src") == "images/pic-man-smile.png"){
+            $(this).attr("src","images/pic-man-sad.png");
+            $("#man__sad").attr("src","images/pic-man-smile.png");
+        }
+        else{
+            $("#man__sad").attr("src","images/pic-man-sad.png");
+            $(this).attr("src","images/pic-man-smile.png");
+        }
+    });
+    $("#man__sad").click(function(){
+        if($(this).attr("src") == "images/pic-man-smile.png"){
+            $(this).attr("src","images/pic-man-sad.png");
+            $("#man__smile").attr("src","images/pic-man-smile.png");
+            changeText(true);
+        }
+        else{
+            $("#man__smile").attr("src","images/pic-man-sad.png");
+            $(this).attr("src","images/pic-man-smile.png");
+            changeText(false);
+        }
+    });
 });
+function changeText(value){
+    if(value){
+        $(".chat__left").css("display","none");
+        $(".chat__right").css("display","block");s
+    }
+    else{
+        $(".chat__left").css("display","block");
+        $(".chat__right").css("display","none");
+    }
+}
