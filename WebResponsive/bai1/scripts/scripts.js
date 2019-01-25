@@ -17,32 +17,40 @@ $(document).ready(function() {
         if($(this).attr("src") == "images/pic-man-smile.png"){
             $(this).attr("src","images/pic-man-sad.png");
             $("#man__sad").attr("src","images/pic-man-smile.png");
+            changeText(true);
         }
         else{
             $("#man__sad").attr("src","images/pic-man-sad.png");
             $(this).attr("src","images/pic-man-smile.png");
+            changeText(false);
         }
     });
     $("#man__sad").click(function(){
         if($(this).attr("src") == "images/pic-man-smile.png"){
             $(this).attr("src","images/pic-man-sad.png");
             $("#man__smile").attr("src","images/pic-man-smile.png");
-            changeText(true);
+            changeText(false);
         }
         else{
             $("#man__smile").attr("src","images/pic-man-sad.png");
             $(this).attr("src","images/pic-man-smile.png");
-            changeText(false);
+            changeText(true);
         }
     });
 });
 function changeText(value){
     if(value){
         $(".chat__left").css("display","none");
-        $(".chat__right").css("display","block");s
+        $(".chat__right").css("display","block");
     }
     else{
         $(".chat__left").css("display","block");
         $(".chat__right").css("display","none");
     }
 }
+$( window ).resize(function() {
+    if($(document).width() > 1279) { 
+        $(".chat__right").css("display","block");
+        $(".chat__left").css("display","block");
+    }
+  });

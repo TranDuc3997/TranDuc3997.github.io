@@ -247,6 +247,19 @@ body {
 .--hide {
   opacity: 0;
 }
+.--border {
+  padding-top: 10px;
+  border-top: 2px solid #95ded9;
+}
+.men__base--large {
+  flex-wrap: wrap;
+}
+.chat__right > .men {
+  width: 100%;
+}
+.chat__right > .men > .men__base {
+  width: 73%;
+}
 .footer {
   display: none;
 }
@@ -326,7 +339,6 @@ body {
     margin-right: 25px;
   }
   .chat__right > .men > .men__base {
-    width: 84%;
     margin-left: 0px;
   }
   .chat__right > .men > .icon-man {
@@ -368,10 +380,6 @@ body {
   }
   .men__base--large {
     flex-wrap: wrap;
-  }
-  .--border {
-    padding-top: 10px;
-    border-top: 2px solid #95ded9;
   }
   .--edit {
     margin-left: -18%;
