@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    if($(document).width() < 641) {
-        $(".chat__right").css("display","none");
-    }
     $("#check__JP-js").change(function() {
         if(this.checked) { // hide text japan
             $(".text").children("p").children("b").removeAttr("style");
