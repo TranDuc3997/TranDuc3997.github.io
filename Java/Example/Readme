@@ -9,52 +9,5 @@ Phần ví dụ về Design Pattern
  + Demo về Method Factory nằm trong Package employeeManager.importEmp
  + Demo về Facade và Strategy nằm trong Package employeeManager.Payroll
  + Demo về Interator nằm trong package employeeManager.searchEmployee
- Yêu cầu đề bài của bài employeeManager:
- Trong công tác quản lý của tổng công ty T có 2 công ty con là công ty ABC và công ty
-BCD
-Trong công ty ABC nhân viên được chia làm 3 loại khác nhau trong quá trình vận hành sản xuất
-là nhân viên sản xuất, nhân viên kinh doanh và cán bộ điều hành. Mỗi nhân viên trong công ty
-đều có các thông tin chung như: mã nhân viên, tên nhân viên, năm sinh, giới tính , hệ số lương
-và năm vào làm. Để nâng cao tính tích cực cho nhân viên, công ty tổ chức đánh giá xếp loại thi
-đua cho nhân viên hàng tháng (loại A,B,C,D). Xếp loại này sẽ quyết định thu nhập của mỗi nhân
-viên như sau:
-- Nếu xếp loại ‘A’: nhân viên được hưởng 100% mức lương + phụ cấp thâm niên
-- Nếu xếp loại ‘B’: nhân viên được hưởng 75% mức lương + phụ cấp thâm niên
-- Nếu xếp loại ‘C’: nhân viên được hưởng 50% mức lương + phụ cấp thâm niên
-- Nếu xếp loại ‘D’: nhân viên được hưởng 0% mức lương + phụ cấp thâm niên
-Biết rằng phụ cấp thâm niên chỉ áp dụng cho các nhân viên có thời gian làm việc từ 5 năm trở
-lên và được tính như sau: phụ cấp thâm niên = số năm làm việc * lương cơ bản/100
-Do tính chất công việc nên mỗi nhân viên lại có những đặc điểm, cách xếp loại, cách tính
-lương và phụ cấp khác nhau như sau:
-- Nhân viên sản xuất: do làm việc trong môi trường khắc nhiệt nên nhân viên sản xuất đều
-được hưởng một hệ số phụ cấp nặng nhọc. Hệ số này là chung cho tất cả các nhân viên
-sản xuất của công ty và đang được công ty qui định là 10%. Mỗi nhân viên sẽ có thông
-tin về số ngày nghỉ trong một tháng và xếp loại thi đua được tính như sau: Nếu số ngày
-nghỉ <=1 thì xếp loại ‘A’, số ngày nghỉ <=3 thì xếp loại ‘B’ , số ngày nghỉ <=5 thì xếp
-loại ‘C’còn lại là xếp loại ‘D’. Lương của nhân viên sản xuất được tính theo công thức
-như sau: lương = hệ số lương * lương cơ bản * (1+ phu cấp nặng nhọc)
-- Nhân viên kinh doanh: Công ty không bắt buộc nhân viên kinh doanh phải làm việc theo
-ngày giống như nhân viên sản xuất mà chỉ quan tâm tới năng lực bán hàng của từng người.
-Mỗi nhân viên kinh doanh có một doanh số bán hàng tối thiểu khác nhau và một thông
-tin về doanh số bán hàng theo tháng. Nếu nhân viên hoàn thành doanh số tối thiểu thì xếp
-loại thi đua là ‘B’, nếu không hoàn thành thì xếp loại ‘C’. Nếu doanh số nhỏ hơn 50%
-doanh số tối thiểu thì xếp loại ‘D’. Ngược lại nếu nhân viên có danh số cao hơn 2.0 lần
-doanh số tối thiểu thì xếp loại ‘A’. Lương của nhân viên kinh doanh cũng được xác định
-như sau: lương =hệ số lương * lương cơ bản + hoa hồng. Trong đó hoa hồng là 15% của
-doanh thu vượt mức doanh thu tối thiểu.
-- Cán bộ quản lý: Cán bộ quản lý có trách nhiệm quản lý toàn bộ hoạt động sản xuất của
-công ty. Cán bộ quản lý có thêm thông tin về chức vụ và hệ số chức vụ. Xếp loại thi đua
-của cán bộ quản lý luôn luôn là ‘A’ và lương của cán bộ quản lý được xác định như sau:
-lương =hệ số lương * lương cơ bản + phụ cấp chức vụ. Trong đó phụ cấp chức vụ được
-xác định = hệ số phụ cấp chức vụ * 1100
-Để có thể tham gia đánh giá của tông công ty. ABC coi các nhân viên có xếp loại thi đua loại
-A là chiến sĩ thi đua, loại B là lao động tiên tiến.
-Đối với công ty BCD, nhân viên chỉ cần các thông tin về mã nhân viên, tên nhân viên.
-Công ty BCD không có xếp loại thi đua hàng tháng và lương chỉ tính bằng 15% của tổng số
-tiền mà nhân viên đó tạo ra trong một tháng mà thôi. Công ty BCD sẽ coi các nhân viên có
-lương trên 10.000.000 là lao động tiên tiến và trên 20.000.000 là chiến sĩ thi đua.
-Tổng công ty T có tổ chức đánh giá các nhân viên trong các công ty thành viên. Muốn một
-nhân viên được đánh giá là “có năng lực ” hay “năng lực tốt” thì tổng công ty chỉ quan tâm
-tới là mỗi nhân viên ở trong các công ty con có phải là chiến sĩ thi đua (nghĩa là có ‘năng lực
-tốt”) hay lao động tiên tiến (nghĩa là “có năng lực”) hay không mà thôi. Mà không quan tâm
-tới công ty con đánh giá vấn đề đó dựa vào tiêu chí nào.
+ Yêu cầu đề bài của bài employeeManager trong file mota.
+ 
